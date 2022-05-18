@@ -58,4 +58,38 @@ class Register{
 
         principal.appendChild(divregisterBox);
     }
+
+    static registerErrorModal(message){
+        const principal = document.querySelector(".root")
+
+        const divError = document.createElement("div")
+        const errorBox = document.createElement("div")
+        const errorBoxTitle = document.createElement("h1")
+        const errorBoxInfo = document.createElement("p")
+        const errorBoxButton = document.createElement("button")
+
+        divError.classList.add("div__error")
+        errorBox.classList.add("register__boxError")
+        errorBoxTitle.classList.add("register__boxError__title")
+        errorBoxInfo.classList.add("register__boxError__info")
+        errorBoxButton.classList.add("register__boxError__btn")
+
+        errorBoxTitle.innerText = "Ops! Ocorreu um erro!"
+        errorBoxInfo.innerText = message
+        errorBoxButton.innerText = "Voltar"
+
+        errorBoxButton.addEventListener("click", ()=>{
+            divError.classList.add("hidden")
+        })
+
+        errorBox.append(errorBoxTitle, errorBoxInfo, errorBoxButton)
+
+        divError.appendChild(errorBox)
+
+        principal.appendChild(divError)
+    }
 }
+
+Register.registerModal()
+
+export default Register
