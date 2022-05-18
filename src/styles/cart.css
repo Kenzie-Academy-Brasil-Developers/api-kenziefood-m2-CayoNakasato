@@ -9,6 +9,7 @@
     }
     .cart__button{
         position: sticky;
+        top:100%;
         bottom: 0;
         background-color: #FF2253;
 
@@ -34,6 +35,7 @@
         align-items: center;
         background-color: rgba(0, 0, 0, .5);
 
+        display: none;
     }
     .modal{
         margin: 0;
@@ -43,8 +45,9 @@
         min-width: 300px;
         min-height: 500px;
         box-shadow:  0 0 10px 0 black;
-        border-radius: 8px;
+        border-radius: 8px; 
 
+        display: none;
     }
     .modal__title{
         display: flex;
