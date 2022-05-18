@@ -36,7 +36,7 @@ class Api{
         )
         .then(res => res.json())
         .then(()=>{
-
+            window.location = "../pages/dashboard.html";
         })
     }
 }
