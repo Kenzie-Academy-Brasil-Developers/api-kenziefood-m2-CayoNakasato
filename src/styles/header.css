@@ -1,0 +1,135 @@
+@media (max-width:800px){
+    header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    
+        background-color: white;
+        width: 100%;
+    
+        box-shadow: 0px 0px 10px 0px rgb(62, 62, 62);
+    }
+    h1{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.7em;
+        color: #212529;
+    
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5px;
+    } 
+    span{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 24px;
+        color: #FF2253;
+    }
+    .search-bar{
+        width: 72%;
+        margin-left: 4%;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .img__search {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        left: 30px;
+        margin-top: 10px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+        background-color: #E9ECEF;
+        border-radius: 12px;
+        text-indent: 40px;
+    }
+    .button_Login {
+        background-color: #FF2253;
+        border-radius: 10px;
+        padding: 5px;
+        color: white;
+
+        height: 40px;
+        margin: 10px 6px;
+        margin-right: 10%;
+    }
+}
+
+@media (min-width:800px) {
+    header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    
+        background-color: white;
+        width: 100%;
+    
+        box-shadow: 0px 0px 10px 0px rgb(62, 62, 62);
+    }
+    h1{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.7em;
+        color: #212529;
+    
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5px;
+    } 
+    span{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+       font-size: 28px;
+        line-height: 24px;
+        color: #FF2253;
+    }
+
+    .img__search {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        left: 30px;
+        margin-top: 10px;
+    }
+
+    .search-bar{
+        width: 30%;
+        margin-left: 10%;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .search__bar input[type="text"] {
+        width: 100%;
+        background-color: #E9ECEF;
+        border-radius: 12px;
+        text-indent: 40px;
+    }
+    .menu {
+        background-color: #FF2253;
+        border-radius: 10px;
+        padding: 5px;
+        color: white;
+    
+        height: 40px;
+        margin: 10px 6px;
+        margin-right: 10%;
+    }    
+}
