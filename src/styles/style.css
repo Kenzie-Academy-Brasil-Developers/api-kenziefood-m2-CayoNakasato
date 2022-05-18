@@ -1,5 +1,10 @@
 @import url("./reset.css");
+@import url("./global.css");
 @import url("./header.css");
 @import url("./loginStyle.css");
 @import url("./registerStyle.css");
 @import url("./modalErrorRegister.css");
+@import url("./filtro.css");
+@import url("./vitrine.css");
+@import url("./cart.css");
+@import url("./dashboard.css");

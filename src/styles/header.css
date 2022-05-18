@@ -29,6 +29,7 @@
         color: #FF2253;
     }
     .search-bar{
+        /* margin-right: 10%; */
         width: 72%;
         margin-left: 4%;
         height: 40px;
