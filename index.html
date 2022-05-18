@@ -10,11 +10,45 @@
 <body>
     <header>
         <h1>Mercadinho do <span>G4</span></h1>
-        <form action="#" class="search-bar">
+        <form action="#" class="search__bar">
             <img class="img__search" src="./src/assert/search.png" alt="Lupa de Pesquisa">
             <input id="serch-input" type="text" placeholder="Pesquisar Produto">
         </form>
-        <button class="button_Login">Login</button>
+        <button class="button__login">Login</button>
     </header>
+
+
+    <aside class="cart">
+        <div class="cart__title">
+            <img src="./src/assert/cart_white.svg" class="cart__title__img__cart" alt="Imagem Carrinho">
+            <h2>Carrinho</h2>
+        </div>
+        <div class="cart__empty">
+            <img class="cart__empty__img" src="./src/assert/bag-svgrepo-com.svg" alt="">
+            <p class="cart__empty__text">Por enquanto não temos produtos no carrinho</p>
+        </div>
+        
+        <article class="cart__product">
+            <picture class="cart__product__img">
+                <img src="https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/panqueca.png" alt="">
+            </picture>
+            <div class="cart__product__info">
+                <h3 class="cart__product__info h3">nome</h3>
+                <small class="cart__product__category">categoria</small>
+                <small class=".cart__product__price">preco</small>
+            </div>
+            <div class="cart__product__buttons">
+                <button id="cart-product-delete" class="cart__product__buttons__deleteBtn">
+                    <img src="./src/assert/trash.svg" alt="">
+                </button>
+                <button id="cart-product-addOne" class="cart__product__buttons__addBtn">
+                    <img src="./src/assert/plus-svgrepo-com.svg" alt="">
+                </button>
+                <button id="cart-product-removeOne" class="cart__product__buttons__removeBtn">
+                    <img src="./src/assert/minus-svgrepo-com.svg" alt="">
+                </button>
+            </div>
+        </article>
+    </aside>
 </body>
 </html>
