@@ -1,0 +1,68 @@
+.div__login{
+    background-color: #c4c4c4c4;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__box{
+    background-color: #F4803A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow:0px 0px 0px 10px #FCD476 inset;
+}
+
+.login__box__title{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.login__box__form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.login__box__inputPassword,.login__box__inputEmail{
+    width: 300px;
+    height: 50px;
+    padding-left: 10px ;
+    border: none;
+    border-radius: 5px;
+}
+
+.login__box__question{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+}
+
+.login__box__redirectText{
+    text-decoration: none;
+    color: purple;
+}
+
+.login__box__button{
+    background-color: #F1F1F1;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.login__box__redirectText:hover{
+    text-decoration: underline;
+    color: darkblue;
+}
