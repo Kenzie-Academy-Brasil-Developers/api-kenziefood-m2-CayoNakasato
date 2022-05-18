@@ -1,0 +1,76 @@
+.div__register{
+    background-color: #c4c4c4c4;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register__box{
+    background-color: #F4803A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow:0px 0px 0px 10px #FCD476 inset;
+}
+
+.register__box__title{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.register__box__form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.register__box__inputPassword,.register__box__inputEmail{
+    width: 300px;
+    height: 50px;
+    padding-left: 10px ;
+    border: none;
+    border-radius: 5px;
+}
+
+.register__box__question{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+}
+
+.register__box__redirectText{
+    text-decoration: none;
+    color: purple;
+}
+
+.register__box__button{
+    background-color: #F23205;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.register__box__redirectText:hover{
+    text-decoration: underline;
+    color: darkblue;
+}
+
+.register__box__button:hover{
+    cursor: pointer;
+    background-color: #FFC701;
+    color: brown;
+    
+}
