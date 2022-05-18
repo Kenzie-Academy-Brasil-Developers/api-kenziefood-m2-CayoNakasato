@@ -1,5 +1,5 @@
-import Login from "../JS/Login.js"
-import Register from "../JS/Register.js"
+import Login from "../models/login.js"
+import Register from "../models/register.js"
 
 class Api{
     static BASIC__URL = "https://api-kenzie-food.herokuapp.com"
