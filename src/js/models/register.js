@@ -1,3 +1,4 @@
+
 class Register{
     static registerModal(){
         const principal = document.querySelector(".root")
