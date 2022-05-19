@@ -3,7 +3,29 @@ import ApiDash from "../controller/apidashboard.js"
 // GET DOS ELEMENTOS DA PÁGINA
 
 const container = document.getElementById('container__products')
+const buttonNav = document.getElementById('ul__button') 
+const modalRegister = document.getElementById('modal__register')
+const fundoModal = document.getElementById('fundo__modal')
+const trashRegModal = document.getElementById('modal__register__trash')
+const registerNome = document.getElementById('modal__register_inputs__nome')
+const registerDescricao = document.getElementById('modal__register_inputs__descricao')
+const registerCategory = document.querySelectorAll('.register__category')
+const registerPreco = document.getElementById('modal__register_inputs__preco')
+const registerImage = document.getElementById('modal__register_inputs__imagem')
+const registerButton = document.getElementById('modal__regiter__button')
+const modalCreateDenied = document.getElementById('modal__status__denied')
+const modalCreateAcept = document.getElementById('modal__status__acept')
+const categoryPan = document.getElementById('register__category_Panificadora')
+const categoryFru = document.getElementById('register__category_Panificadora')
 
+
+// LISTENERS DA PÁGINA 
+
+buttonNav.addEventListener('click', showModalRegister)
+trashRegModal.addEventListener('click', closeModal)
+registerButton.addEventListener('click', createProduct)
+
+// API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
 
 class Products {
 
@@ -55,5 +77,73 @@ class Products {
             container.append(table)
         });
     }
-
 }
+
+// FUNÇÃO PARA CRIAÇÃO DE ELEMENTOS - MODAL REGISTRO - BOTÃO FECHAR MODAL - FUNÇÃO TOGLE DAS CATEGORIAS - BOTÃO CRIAR PRODUTO
+
+function showModalRegister() {
+    modalRegister.style.display = 'block'
+    fundoModal.style.display = 'block'
+}
+
+
+function createProduct() {
+    const data = {}
+
+    data[registerNome.name] = registerNome.value
+    data[registerDescricao.name] = registerDescricao.value   
+    data[registerPreco.name] = registerPreco.value
+    data[registerImage.name] = registerImage.value
+    data.categoria = 'Panificadora'
+
+    const result = ApiDash.createProduct(data)
+    if(result.message == 'Token is missing'){
+        modalCreateDenied.style.display = 'flex'
+    } else {
+        modalCreateAcept.style.display = 'flex'
+    }
+     setTimeout(() => {
+         location.reload('/dashboard.html')
+     }, 3000);
+}
+
+function closeModal() {
+    modalRegister.style.display = 'none'
+    fundoModal.style.display = 'none'
+}
+function category (categoria) {
+    let res
+    registerCategory.forEach(elem => {
+            elem.addEventListener('click',() => {
+            if(elem.classList == 'register__category__selected') {
+                elem.classList.remove('register__category__selected')
+                elem.classList.add('register__category')               
+            } else {
+                elem.classList.remove('register__category')
+                elem.classList.add('register__category__selected')
+                let res = elem.textContent         
+            }    
+        })
+    })
+    console.log(res)
+    return res
+}
+category()
+
+
+
+Products.inputProducts()
+
+
+
+const btnHomePage = document.querySelector("#header__button__menu")
+
+btnHomePage.addEventListener("click", ()=>{
+    window.location = "../../index.html"
+})
+
+const avatarImage = document.querySelector(".avatar__hover")
+avatarImage.addEventListener("click", ()=>{
+    
+})
+
