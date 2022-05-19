@@ -1,0 +1,199 @@
+@media (max-width:800px){
+    .showCase{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin-left: 10%;
+        margin-top: 10px;
+        width: 90%;
+        min-height: 400px;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    .product{
+        width: 300px;
+        height: 380px;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        margin-right: 7px;
+        margin-bottom: 10px;
+    }
+    .img__products{
+        height: 200px;
+        width: 300px;
+        border-radius: 15px;
+    }
+    .img__products img{
+        height: 200px;
+        width: 300px;
+        border-radius: 15px;
+    } 
+    .name{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 27px;
+        
+    }
+    .description{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #868E96;
+
+    }
+    .category {
+        display: flex;
+        flex-flow: row nowrap;
+
+        color: #868E96;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        
+        text-decoration: underline;
+    }
+    .price{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 14px;
+        line-height: 20px;
+        color: #212529;
+
+        margin-left: 10px;
+    }
+    .cart__div{
+        display: inline-flex;
+    }
+
+    .addCart{
+        border: none;
+        background-color: #E4F7EF;
+        width: 100px;
+        height: 30px;
+        border-radius: 25px;
+        margin-right: 10px;
+        padding: 5px 10px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        font-size: 10px;
+    }
+    .addCart__img{
+        width: 18px;
+        height: 18px;
+        align-self: center;
+        margin-right: 6px;
+    }
+}  
+
+@media (min-width:800px){
+    main{
+        margin: 0% 10%;
+        width: 80%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    .showCase{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        margin-top: 10px;
+        width: 80%;
+        min-height: 400px;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    .product{
+        width: 250px;
+        height: 380px;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        margin-right: 7px;
+        margin-bottom: 10px;
+    }
+    .img__products{
+        height: 200px;
+        width: 250px;
+        border-radius: 15px;
+    }
+    .img__products img{
+        height: 200px;
+        width: 250px;
+        border-radius: 15px;
+    } 
+    .name{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 27px;
+        
+    }
+    .description{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #868E96;
+
+    }
+    .category {
+        display: flex;
+        flex-flow: row nowrap;
+
+        color: #868E96;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        
+        text-decoration: underline;
+    }
+    .price{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 14px;
+        line-height: 20px;
+        color: #212529;
+
+        margin-left: 10px;
+    }
+    .cart__div{
+        display: inline-flex;
+    }
+    .addCart{
+        border: none;
+        background-color: #E4F7EF;
+        width: 100px;
+        height: 30px;
+        border-radius: 25px;
+        margin-right: 10px;
+        padding: 5px 10px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        font-size: 10px;
+    }
+    .addCart__img{
+        width: 18px;
+        height: 18px;
+        align-self: center;
+        margin-right: 6px;
+    }
+}    

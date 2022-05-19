@@ -64,7 +64,7 @@ strong {
     display: none;
 }
 
-main {
+.main__dashBoard{
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
