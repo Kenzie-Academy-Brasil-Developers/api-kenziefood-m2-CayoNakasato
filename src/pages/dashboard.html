@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,9 @@
     <script defer type="module" src="../js/controller/api.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <header id="header" >
+    <header id="header">
         <div id="header__container">
             <h1>Mercadinho da <strong>G4</strong></h1>
             <div id="header__container__itens">
@@ -20,11 +22,11 @@
                     <img src="../assert/search.svg">
                     <input placeholder="Pesquisar por produto">
                 </div>
-                <img src="../assert/user.svg">    
+                <img src="../assert/user.svg">
                 <div id="header__Logout__Hover">
                     <p>Mercadinho da <strong>G4</strong></p>
                     <button>Logout</button>
-                </div>                
+                </div>
             </div>
         </div>
     </header>
@@ -32,61 +34,79 @@
         <div class="container">
             <nav id="list">
                 <div id="list__ul">
-                    <li class="list__itens__selected list_filter"><p class="itens__category">Todos</p></li>
-                    <li class="list__itens list_filter"><p class="itens__category">Panificadora</p></li>
-                    <li class="list__itens list_filter"><p class="itens__category">Frutas</p></li>
-                    <li class="list__itens list_filter"><p class="itens__category">Bebidas</p></li>
+                    <li class="list__itens__selected ">
+                        <p class="itens__category">Todos</p>
+                    </li>
+                    <li class="list__itens">
+                        <p class="itens__category">Panificadora</p>
+                    </li>
+                    <li class="list__itens">
+                        <p class="itens__category">Frutas</p>
+                    </li>
+                    <li class="list__itens">
+                        <p class="itens__category">Bebidas</p>
+                    </li>
                 </div>
                 <button class="list__ul__button">Adicionar novo produto</button>
             </nav>
         </div>
-        <div id="container__products">    
-            <table id="container__table__header" >
+        <div id="container__products">
+            <table id="container__table__header">
                 <tr id="container__table__line">
                     <td class="container__table__header" width="25%">Produto</td>
-                    <td class="container__table__header"  width="25%">Categorias</td>
-                    <td class="container__table__header"  width="40%">Descrição</td>
-                    <td class="container__table__header"  width="10%">Acções</td>
+                    <td class="container__table__header" width="25%">Categorias</td>
+                    <td class="container__table__header" width="40%">Descrição</td>
+                    <td class="container__table__header" width="10%">Acções</td>
                 </tr>
             </table>
-            <table class="container__table__cells">    
+            <table class="container__table__cells">
                 <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product1.svg">Mousse de morango com frutas</td>
+                    <td class="container__table__product" width="25%"><img src="../assert/product1.svg">Mousse de
+                        morango com frutas</td>
                     <td class="container__table__cell" width="25%">Bebidas</td>
-                    <td class="container__table__cell"  width="40%">Sobremessa fácil, rápida e muito saborosa</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
+                    <td class="container__table__cell" width="40%">Sobremessa fácil, rápida e muito saborosa</td>
+                    <td class="container__table__actions" width="10%"><img class="edit__image"
+                            src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
                 </tr>
             </table>
-            <table class="container__table__cells">    
+            <table class="container__table__cells">
                 <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product2.svg">Panqueca de banana com aveia </td>
+                    <td class="container__table__product" width="25%"><img src="../assert/product2.svg">Panqueca de
+                        banana com aveia </td>
                     <td class="container__table__cell" width="25%">Bebidas Frutas</td>
-                    <td class="container__table__cell"  width="40%">Esta receita serve muito bem 2 pessoas...</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
+                    <td class="container__table__cell" width="40%">Esta receita serve muito bem 2 pessoas...</td>
+                    <td class="container__table__actions" width="10%"><img class="edit__image"
+                            src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
                 </tr>
             </table>
-            <table class="container__table__cells">    
+            <table class="container__table__cells">
                 <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product3.svg">Pastel de verduras vegano</td>
+                    <td class="container__table__product" width="25%"><img src="../assert/product3.svg">Pastel de
+                        verduras vegano</td>
                     <td class="container__table__cell" width="25%">Bebidas Bebidas</td>
-                    <td class="container__table__cell"  width="40%">Todos nós fervemos vegetais, salteamos...</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
+                    <td class="container__table__cell" width="40%">Todos nós fervemos vegetais, salteamos...</td>
+                    <td class="container__table__actions" width="10%"><img class="edit__image"
+                            src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
                 </tr>
             </table>
-            <table class="container__table__cells">    
+            <table class="container__table__cells">
                 <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product4.svg">Pizza vegetariana de palmito</td>
+                    <td class="container__table__product" width="25%"><img src="../assert/product4.svg">Pizza
+                        vegetariana de palmito</td>
                     <td class="container__table__cell" width="25%">Bebidas Bebidas</td>
-                    <td class="container__table__cell"  width="40%">Esse é um dos sabores de pizza mais ped...</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
+                    <td class="container__table__cell" width="40%">Esse é um dos sabores de pizza mais ped...</td>
+                    <td class="container__table__actions" width="10%"><img class="edit__image"
+                            src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
                 </tr>
             </table>
-            <table class="container__table__cells">    
+            <table class="container__table__cells">
                 <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product5.svg">Laranja Pera Fresca Kenzie 5kg</td>
+                    <td class="container__table__product" width="25%"><img src="../assert/product5.svg">Laranja Pera
+                        Fresca Kenzie 5kg</td>
                     <td class="container__table__cell" width="25%">Bebidas Bebidas</td>
-                    <td class="container__table__cell"  width="40%">O vinho é rico em compostos nutricionais...</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
+                    <td class="container__table__cell" width="40%">O vinho é rico em compostos nutricionais...</td>
+                    <td class="container__table__actions" width="10%"><img class="edit__image"
+                            src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
                 </tr>
             </table>
         </div>
@@ -96,7 +116,7 @@
                     <p>Cadastro de produtos</p>
                     <img src="../assert/delete.svg">
                 </div>
-            </div>     
+            </div>
             <div class="register__body">
                 <div class="modal__register__inputs">
                     <div>
@@ -142,12 +162,12 @@
             <button id="modal__regiter__button">Cadastrar Produto</button>
         </form>
         <form action="" id="modal__edit">
-            <div class="register__header">   
+            <div class="register__header">
                 <div class="modal__resgister__header">
                     <p>Cadastro de produtos</p>
                     <img src="../assert/delete.svg">
                 </div>
-            </div>    
+            </div>
             <div class="register__body">
                 <div class="modal__register__inputs">
                     <div class="register__inputs__span">
@@ -159,22 +179,22 @@
                     <div class="register__inputs__span">
                         <span>Descrição</span>
                     </div>
-                        <input class="modal__register__input" placeholder="Digitar a descrição">
+                    <input class="modal__register__input" placeholder="Digitar a descrição">
                 </div>
                 <div class="register__inputs__category">
                     <div class="register__inputs__span">
                         <span>Categorias</span>
-                    </div>    
+                    </div>
                     <div class="modal__register__category">
                         <div class="register__category">
                             <span>Panificadora</option>
-                        </div>    
+                        </div>
                         <div class="register__category">
                             <span>Frutas</span>
-                        </div>    
-                        <div class="register__category">     
+                        </div>
+                        <div class="register__category">
                             <span>Bebidas</opt>
-                        </div>        
+                        </div>
                     </div>
                 </div>
                 <div class="modal__register__inputs">
@@ -193,7 +213,7 @@
             <div class="modal__edit__buttons">
                 <button id="modal__edit__del">Excluir</button>
                 <button id="modal__edit__save">Salvar alterações</button>
-            </div>    
+            </div>
         </form>
         <div id="modal__edit__delete">
             <div class="modal__header">
@@ -211,7 +231,7 @@
             <div class="modal__status__acept__header">
                 <span>Status</span>
             </div>
-            <div  class="modal__status__acept__header__phrase">
+            <div class="modal__status__acept__header__phrase">
                 <span>Produto adicionado com sucesso</span>
             </div>
         </div>
@@ -222,7 +242,8 @@
             <div>
                 <span>Ocorreu algum erro, o produto não foi adicionado</span>
             </div>
-        </div>           
+        </div>
     </main>
 </body>
+
 </html>
