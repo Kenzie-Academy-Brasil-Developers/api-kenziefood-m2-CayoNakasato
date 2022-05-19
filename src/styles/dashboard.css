@@ -1,31 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url(./reset.css);
+@import url("./dashboard/globalDashboard.css");
+@import url(./dashboard/headerDashboard.css);
+@import url("./filter.css");
 
-body {
-    font-family: 'Inter';
-}
 
-#header {
+/* #header {
     width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: center;
     background-color: #FFFFFF;
-}
+} */
 
-#header__container {
+/* #header__container {
     display: flex;
     width: 90vw;
     height: inherit;
     justify-content: space-between;
     align-items: center;
-}
-
-header h1 {
-    font-size: 4vh;
-}
-
-strong {
-    color: red;
 }
 
 #header__container__itens {
@@ -44,9 +36,9 @@ strong {
     background-color: #FF2253;
     border-radius: 2vw;
     color: #F8F9FA;
-}
+} */
 
-#container__itens__searchbar {
+/* #container__itens__searchbar {
     width: 15vw;
     height: 70%;
     background-color: #E9ECEF;
@@ -58,19 +50,18 @@ strong {
 #container__itens__searchbar input {
     background-color: #E9ECEF;
     border: none;
-}
+} */
 
-#header__Logout__Hover {
+/* #header__Logout__Hover {
     display: none;
+} */
 }
-
-main {
+.main__dashBoard{
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .container {
     display: flex;
     justify-content: center;
@@ -90,30 +81,6 @@ main {
     list-style: none;
     width: 45%;
     justify-content: space-between;
-}
-
-.list__itens {
-    width: 10vw;
-    height: 7vh;
-    background-color: #FFF7F4;
-    border-radius: 2vw;
-    color: #212529;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.list__itens__selected {
-    width: 10vw;
-    height: 7vh;
-    background-color: #FF2253;
-    border-radius: 2vw;
-    color: #F8F9FA;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
 .itens__category {
@@ -392,4 +359,10 @@ main {
     border-bottom: 8px solid #39DF8F;
     border-bottom-left-radius: 0.8vw;
     border-bottom-right-radius: 0.8vw;
+}
+
+.container__table__product__img {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5vh;
 }

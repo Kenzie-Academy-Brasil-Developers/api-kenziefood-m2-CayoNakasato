@@ -23,6 +23,8 @@
         line-height: 28px;
         color: white;
         border: none;
+
+        
     }
     .modal__container{
         width: 100vw;
@@ -159,6 +161,7 @@
         display: none;
     }
     .cart{
+        margin-top: 10px;
         width: 300px;
         height: 400px;
         display: flex;
