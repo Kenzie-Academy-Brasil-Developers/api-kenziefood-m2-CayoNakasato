@@ -175,12 +175,6 @@ strong {
     margin-right: 2vw;
 }
 
-#modal__register {
-    width: 30vw;
-    height: 90vh;
-    border-radius: 0.8vw;
-}
-
 .register__header {
     width: 100%;
     border-top-left-radius: 0.8vw;
@@ -252,20 +246,51 @@ strong {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.register__category__edit {
+    width: 30%;
+    height: 7vh;
+    font-size: 2.5vh;
+    background-color: #F8F9FA;
+    color: #868E96;
+    font-weight: 500;
+    border-radius: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.register__category__selected {
+    width: 30%;
+    height: 7vh;
+    font-size: 2.5vh;
+    background-color: #FF2253;
+    color: #F8F9FA;
+    font-weight: 500;
+    border-radius: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 #modal__regiter__button {
-    width: 100%;
+    width: 90%;
     height: 7vh;
     border: none;
     background-color: #FF2253;
     border-radius: 2vw;
     color: #F8F9FA;
-    margin-top: 10vh;
+    margin-top: 7vh;
+    margin-left: 5%;
     font-size: 2vh;
 }
 
 #modal__edit {
+    display: none;
     width: 30vw;
     height: 90vh;
     border-radius: 0.8vw;
@@ -305,7 +330,7 @@ strong {
     width: 30vw;
     height: 40vh;
     border-radius: 0.8vw;
-    display: flex;
+    display: none;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -353,7 +378,7 @@ strong {
     width: 30vw;
     height: 20vh;
     border-radius: 0.8vw;
-    display: flex;
+    display: none;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -362,7 +387,7 @@ strong {
     width: 30vw;
     height: 20vh;
     border-radius: 0.8vw;
-    display: flex;
+    display: none;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -404,4 +429,24 @@ strong {
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
+}
+
+#fundo__modal {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    margin-top: -10vh;
+    background-color: #000000af;
+}
+
+#modal__register {
+    display: none;
+    position: absolute;
+    margin-top: -5vh;
+    width: 30vw;
+    height: 90vh;
+    border-radius: 0.8vw;
+    background-color: #fff;
 }
