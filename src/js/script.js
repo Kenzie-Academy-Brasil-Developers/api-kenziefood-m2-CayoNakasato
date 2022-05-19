@@ -1,12 +1,16 @@
 import {showCase} from './models/showCaseDOM.js';
-import Products from './models/dashboard,js'
+import {Products} from './models/dashboard.js'
 import {Cart} from './models/cartDOM.js';
-import {FilterHomePage, FilterDashboard} from "./models/FilterHomePage.js";
+import {FilterHomePage } from "./models/filters.js";
+
+// import {FilterDashboard} from "./models/FilterHomePage.js";
 import Login from "./models/login.js";
 
 const btnLogar = document.querySelector(".button__login")
 const loginDiv = document.querySelector(".div__login")
+
 const homePageContent = document.querySelector(".showCase")
+const dashboardContent = document.querySelector('#container__products')
 
 const filterTodosHomePage = document.querySelector("#filter__homePage__todos")
 const filterPanificadoraHomePage = document.querySelector("#filter__homePage__panificadora")
@@ -18,21 +22,22 @@ const filterPanificadoraDashboard = document.querySelector("#filter__dashboard__
 const filterFrutasDashboard = document.querySelector("#filter_dashboard_frutas")
 const filterBebidasDashboard = document.querySelector("#filter_dashboard_bebidas")
 
+showCase.homePage()
+Cart.emptyCart()
 
 btnLogar.addEventListener("click", ()=>{
     Login.loginModal()
     loginDiv.classList.remove("hidden")
 })
 
-
 filterTodosHomePage.addEventListener("click", () => {
     showCase.homePage()
-    console.log('oi');
 })
 
-filterPanificadoraHomePage.addEventListener("click", () => {
+filterPanificadoraHomePage.addEventListener("click", async () => {
+
     homePageContent.innerHTML = ''
-    FilterHomePage.filterPanificadora()
+    await FilterHomePage.filterPanificadora()
 })
 
 filterFrutasHomePage.addEventListener("click", async () => {
@@ -46,23 +51,23 @@ filterBebidasHomePage.addEventListener("click", () => {
 })
 
 filterTodosDashboard.addEventListener("click", () => {
-    Products.inputProducts()
     console.log('oi');
+    Products.inputProducts()
 })
 
 filterPanificadoraDashboard.addEventListener("click", () => {
-    homePageContent.innerHTML = ''
+    dashboardContent.innerHTML = ''
     FilterDashboard.filterPanificadora()
 })
 
 filterFrutasDashboard.addEventListener("click", async () => {
-    homePageContent.innerHTML = ''
+    dashboardContent.innerHTML = ''
     FilterDashboard.filterFrutas()
 })
 
 filterBebidasDashboard.addEventListener("click", () => {
-    homePageContent.innerHTML = ''
+    dashboardContent.innerHTML = ''
     FilterDashboard.filterBebidas()
 })
-showCase.homePage()
-Cart.emptyCart()
+
+

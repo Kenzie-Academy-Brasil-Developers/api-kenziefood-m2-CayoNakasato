@@ -60,13 +60,13 @@ class Products {
 
 const btnHomePage = document.querySelector("#header__button__menu")
 
-btnHomePage.addEventListener("click", ()=>{
-    window.location = "../../index.html"
-})
+// btnHomePage.addEventListener("click", () => {
+//     window.location = "../../index.html"
+// })
 
 const avatarImage = document.querySelector(".avatar__hover")
-avatarImage.addEventListener("click", ()=>{
+// avatarImage.addEventListener("click", ()=>{
     
-})
+// })
 
-export default Products
+export{ Products } 

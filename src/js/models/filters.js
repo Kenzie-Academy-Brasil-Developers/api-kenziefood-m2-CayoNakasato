@@ -1,17 +1,18 @@
 import Api from "../controller/api.js"
 import { showCase } from "./showCaseDOM.js"
 
+const homePageContent = document.querySelector(".showCase")
 
 class FilterHomePage {
-    static data =  Api.getItem()
-
+    
     static async filterPanificadora() {
-        console.log(await data);
+        const data = await Api.getItem()
         // showCase.innerHTML = ''
         const filter = await data.filter((product) => {
             return product.categoria === "Panificadora"
         })
-        this.showByCategory(filter)
+        console.log('oi');
+        return this.showByCategory(filter)
     }
 
     static async filterFrutas() {
@@ -50,7 +51,7 @@ class FilterHomePage {
                     </div>
                 </aside>
                 `
-            showCase.appendChild(productCard)
+            homePageContent.appendChild(productCard)
         })
     }
 }
@@ -107,4 +108,6 @@ class FilterDashboard {
     }
 }
 
-export  {FilterHomePage, FilterDashboard}
+export  {FilterHomePage} 
+
+// export {FilterDashboard}
