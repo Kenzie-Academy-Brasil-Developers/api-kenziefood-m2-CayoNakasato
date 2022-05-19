@@ -12,7 +12,7 @@ class showCase {
         main.appendChild(showCase)
 
         let productArray = await this.data
-        console.log(productArray)
+
         productArray.forEach(element => {
             let productCard = document.createElement("article")
                 productCard.classList="product"
