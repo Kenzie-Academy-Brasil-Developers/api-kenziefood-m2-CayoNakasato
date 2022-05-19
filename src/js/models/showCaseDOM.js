@@ -7,6 +7,7 @@ class showCase {
         productArray.forEach(element => {
             let productCard = document.createElement("article")
                 productCard.classList="product"
+                productCard.id=element.id
                 productCard.innerHTML=`
                         <picture class="img__products">
                             <img src="${element.imagem} " alt="${element.nome}">
