@@ -393,3 +393,9 @@ main {
     border-bottom-left-radius: 0.8vw;
     border-bottom-right-radius: 0.8vw;
 }
+
+.container__table__product__img {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5vh;
+}
