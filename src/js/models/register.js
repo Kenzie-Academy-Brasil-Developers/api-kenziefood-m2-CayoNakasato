@@ -1,8 +1,10 @@
+import Api from "../controller/api.js"
+import Login from "./login.js"
 
 class Register{
     static registerModal(){
         const principal = document.querySelector(".root")
-
+     
         const divregisterBox = document.createElement("div")
         const registerBox = document.createElement("div")
         const registerBoxTitle = document.createElement("h1")
@@ -33,12 +35,21 @@ class Register{
 
         registerBoxTitle.innerText = "Cadastro"
         registerBoxInputName.placeholder = "Digite seu nome"
+        registerBoxInputName.alt = "Coloqueseu username"
         registerBoxInputEmail.placeholder = "Digite seu email"
+        registerBoxInputEmail.alt = "Coloque seu Email"
+        registerBoxInputEmail.type = "email"
         registerBoxInputPassword.placeholder = "Digite sua senha"
+        registerBoxInputPassword.type = "password"
+        registerBoxInputPassword.alt = "Coloque sua senha"
         registerBoxText.innerText = "Já possui conta?"
         registerBoxRedirect.innerText = "Logue!"
-        registerBoxRedirect.href = "#"
         registerBoxButton.innerText = "Cadastrar"
+
+        registerBoxRedirect.addEventListener("click", ()=>{
+                Login.loginModal()
+                divregisterBox.innerHTML = ''
+        })
 
         registerBoxButton.addEventListener("click", ()=>{
             Api.registerUser({
@@ -91,6 +102,5 @@ class Register{
     }
 }
 
-Register.registerModal()
 
 export default Register

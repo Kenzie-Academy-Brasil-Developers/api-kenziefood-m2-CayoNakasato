@@ -1,7 +1,10 @@
 .div__login{
     background-color: #c4c4c4c4;
+    position: fixed;
     height: 100vh;
     width: 100vw;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,12 +31,13 @@
 .login__box__form{
     display: flex;
     flex-direction: column;
+    width: 300px;
     gap: 15px;
     
 }
 
 .login__box__inputPassword,.login__box__inputEmail{
-    width: 300px;
+    width: 90%;
     height: 50px;
     padding-left: 10px ;
     border: none;
@@ -62,7 +66,18 @@
     font-weight: 700;
 }
 
+.hidden{
+    display: none;
+}
+
 .login__box__redirectText:hover{
     text-decoration: underline;
+    cursor: pointer;
     color: darkblue;
+}
+
+.login__box__button:hover{
+    cursor: pointer;
+    background-color: darkmagenta;
+    color: white;
 }
