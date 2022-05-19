@@ -1,10 +1,12 @@
+import Api from "../controller/api.js"
+import Register from "./register.js"
+
 class Login{
     static loginModal(){
         const principal = document.querySelector(".root")
-
-        principal.innerHTML = ''
         
-        const divloginBox = document.createElement("div")
+        const divloginBox = document.querySelector(".div__login")
+
         const loginBox = document.createElement("div")
         const loginBoxTitle = document.createElement("h1")
         const loginBoxForm = document.createElement("form")
@@ -15,7 +17,6 @@ class Login{
         const loginBoxRedirect = document.createElement("a")
         const loginBoxButton = document.createElement("button")
 
-        divloginBox.classList.add("div__login")
         loginBox.classList.add("login__box")
         loginBoxTitle.classList.add("login__box__title")
         loginBoxForm.classList.add("login__box__form")
@@ -26,17 +27,32 @@ class Login{
         loginBoxRedirect.classList.add("login__box__redirectText")
         loginBoxButton.classList.add("login__box__button")
 
-
         loginBoxInputEmail.name = "email"
         loginBoxInputPassword.name = "password"
 
         loginBoxTitle.innerText = "Login"
         loginBoxInputEmail.placeholder = "Digite seu email"
+        loginBoxInputEmail.type = "email"
+        loginBoxInputEmail.alt = "Coloque seu email"
         loginBoxInputPassword.placeholder = "Digite sua senha"
+        loginBoxInputPassword.type = "password"
+        loginBoxInputPassword.alt = "Coloque sua senha"
         loginBoxText.innerText = "Não possui conta?"
         loginBoxRedirect.innerText = "Registre-se!"
-        loginBoxRedirect.href = "../Pages/dashboard.html"
         loginBoxButton.innerText = "Logar"
+
+        loginBoxRedirect.addEventListener("click", ()=>{
+            loginBox.classList.add("hidden")
+            Register.registerModal()
+        })
+
+        loginBoxButton.addEventListener("click", ()=>{
+            Api.loginUser({
+                "email": loginBoxInputEmail.value,
+                "password": loginBoxInputPassword.value
+            })
+            window.location = "../../pages/dashboard.html"
+        })
 
         loginBoxForm.append(loginBoxInputEmail, loginBoxInputPassword)
 

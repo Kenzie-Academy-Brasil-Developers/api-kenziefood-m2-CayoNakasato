@@ -9,7 +9,8 @@
     }
     .cart__button{
         position: sticky;
-        bottom: 0;
+        top:100%;
+        bottom: 0%;
         background-color: #FF2253;
 
         width: 100%;
@@ -21,6 +22,7 @@
         font-size: 17.1px;
         line-height: 28px;
         color: white;
+        border: none;
     }
     .modal__container{
         width: 100vw;
@@ -34,6 +36,7 @@
         align-items: center;
         background-color: rgba(0, 0, 0, .5);
 
+        /* display: none; */
     }
     .modal{
         margin: 0;
@@ -43,8 +46,9 @@
         min-width: 300px;
         min-height: 500px;
         box-shadow:  0 0 10px 0 black;
-        border-radius: 8px;
+        border-radius: 8px; 
 
+        /* display: none; */
     }
     .modal__title{
         display: flex;
@@ -128,6 +132,7 @@
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
+        
     }
     .cart__product__buttons__deleteBtn{
         height: 25px;
@@ -160,7 +165,7 @@
         flex-flow: column nowrap;
         overflow-y: auto;
         background-color: #F8F9FA;
-        border-radius: 0px 0px 8px 8px;
+        border-radius: 8px 8px 8px 8px;
     }
     .cart__empty{
         display: flex;
@@ -168,6 +173,7 @@
         justify-content: center;
         align-items: center;
         margin: auto;
+        width: 250px;
 
         /* display: none; */
     }
