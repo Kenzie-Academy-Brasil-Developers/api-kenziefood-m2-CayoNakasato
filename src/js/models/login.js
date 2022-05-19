@@ -51,7 +51,6 @@ class Login{
                 "email": loginBoxInputEmail.value,
                 "password": loginBoxInputPassword.value
             })
-            window.location = "../../pages/dashboard.html"
         })
 
         loginBoxForm.append(loginBoxInputEmail, loginBoxInputPassword)

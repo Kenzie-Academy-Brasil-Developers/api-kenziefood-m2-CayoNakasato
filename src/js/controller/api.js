@@ -39,10 +39,13 @@ class Api{
         )
         .then(res => res.json())
         .then((res)=>{
-            if(res.status === 200){
+            if(res.status !== 404){
+                console.log("deu Certo")
+
                 localStorage.setItem("token", res)
                 window.location = "/src/pages/dashboard.html"
             }else{
+                console.log("deu Errado")
                 const principal = document.querySelector(".root")
                 principal.innerHTML = ''
                 Register.registerErrorModal("Ops! Verifique seu email ou senha!")
