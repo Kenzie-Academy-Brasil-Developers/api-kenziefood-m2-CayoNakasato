@@ -1,5 +1,6 @@
 import { ApiRequest } from "./controller/apiRequest.js";
 import {showCase} from './models/showCaseDOM.js';
+import {Cart} from './models/cartDOM.js';
 
 import Login from "./models/login.js";
 import Register from "./models/register.js";
@@ -12,5 +13,7 @@ btnLogar.addEventListener("click", ()=>{
     loginDiv.classList.remove("hidden")
 })
 showCase.homePage()
+Cart.emptyCart()
+
 
 
