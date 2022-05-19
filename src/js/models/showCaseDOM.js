@@ -3,7 +3,7 @@ class showCase {
     static data = ApiRequest.requisition()
     static async homePage(){   
         let productArray = await this.data
-        console.log(productArray)
+
         productArray.forEach(element => {
             let productCard = document.createElement("article")
                 productCard.classList="product"
