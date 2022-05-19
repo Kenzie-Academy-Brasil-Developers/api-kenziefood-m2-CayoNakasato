@@ -17,9 +17,27 @@ const modalCreateDenied = document.getElementById('modal__status__denied')
 const modalCreateAcept = document.getElementById('modal__status__acept')
 const categoryPan = document.getElementById('register__category_Panificadora')
 const categoryFru = document.getElementById('register__category_Panificadora')
-
+const avatarImg = document.querySelector(".avatar__hover")
+const infoLogoutButton = document.getElementById("header__Logout__Hover")
+const logoutBtn = document.querySelector(".header__btn__logout")
+const btnHomePage = document.querySelector("#header__button__menu")
 
 // LISTENERS DA PÁGINA 
+
+btnHomePage.addEventListener("click", ()=>{
+    window.location = "../../index.html"
+})
+
+avatarImg.addEventListener('click', ()=>{
+    if(infoLogoutButton.style.display = "none"){
+        infoLogoutButton.style.display = "block"
+    }
+})
+
+logoutBtn.addEventListener("click", ()=>{
+    window.location.href = "/index.html"
+    localStorage.clear()
+})
 
 buttonNav.addEventListener('click', showModalRegister)
 trashRegModal.addEventListener('click', closeModal)
@@ -94,7 +112,7 @@ function createProduct() {
     data[registerDescricao.name] = registerDescricao.value   
     data[registerPreco.name] = registerPreco.value
     data[registerImage.name] = registerImage.value
-    data.categoria = 'Panificadora'
+    data.categoria = category();
 
     const result = ApiDash.createProduct(data)
     if(result.message == 'Token is missing'){
@@ -102,16 +120,16 @@ function createProduct() {
     } else {
         modalCreateAcept.style.display = 'flex'
     }
-     setTimeout(() => {
-         location.reload('/dashboard.html')
-     }, 3000);
+    //  setTimeout(() => {
+    //      location.reload('/dashboard.html')
+    //  }, 3000);
 }
 
 function closeModal() {
     modalRegister.style.display = 'none'
     fundoModal.style.display = 'none'
 }
-function category (categoria) {
+function category() {
     let res
     registerCategory.forEach(elem => {
             elem.addEventListener('click',() => {
@@ -121,12 +139,12 @@ function category (categoria) {
             } else {
                 elem.classList.remove('register__category')
                 elem.classList.add('register__category__selected')
-                let res = elem.textContent         
+                res = elem.textContent         
             }    
         })
     })
-    console.log(res)
-    return res
+
+  return res
 }
 category()
 
@@ -136,14 +154,5 @@ Products.inputProducts()
 
 
 
-const btnHomePage = document.querySelector("#header__button__menu")
 
-btnHomePage.addEventListener("click", ()=>{
-    window.location = "../../index.html"
-})
-
-const avatarImage = document.querySelector(".avatar__hover")
-avatarImage.addEventListener("click", ()=>{
-    
-})
 
