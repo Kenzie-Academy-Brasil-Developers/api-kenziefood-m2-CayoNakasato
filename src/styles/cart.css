@@ -10,7 +10,7 @@
     .cart__button{
         position: sticky;
         top:100%;
-        bottom: 0;
+        bottom: 0%;
         background-color: #FF2253;
 
         width: 100%;
