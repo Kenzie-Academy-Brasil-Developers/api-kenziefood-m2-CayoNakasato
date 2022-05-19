@@ -36,6 +36,8 @@ class Products {
             description.setAttribute('width', '40%')
             buttons.classList.add('container__table__actions')
             buttons.setAttribute('width', '10%')
+            edit.classList.add('edit__image')
+
             
             pName.innerText = element.nome
             imgProduct.src = element.imagem
@@ -43,6 +45,8 @@ class Products {
             description.innerText = element.descricao
             trash.src = "../assert/trash.svg"
             edit.src = "../assert/edit.svg"
+            trash.alt = element.id
+            edit.alt = element.id
 
             buttons.append(edit, trash)
             name.append(imgProduct, pName)
@@ -53,5 +57,3 @@ class Products {
     }
 
 }
-console.log( Products.inputProducts())
-console.log(Products.DATA)
