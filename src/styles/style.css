@@ -1,8 +1,15 @@
 @import url("./reset.css");
 @import url("./global.css");
 @import url("./header.css");
+@import url("./loginStyle.css");
+@import url("./registerStyle.css");
+@import url("./modalErrorRegister.css");
 @import url("./filtro.css");
 @import url("./vitrine.css");
 @import url("./cart.css");
+<<<<<<< HEAD
 @import url("./loginStyle.css");
 @import url("./registerStyle.css");
+=======
+@import url("./dashboard.css");
+>>>>>>> ea2b4f9a0361e0f2c89a57c49610a685c8695a51
