@@ -28,7 +28,7 @@
         line-height: 24px;
         color: #FF2253;
     }
-    .search-bar{
+    .search__bar{
         /* margin-right: 10%; */
         width: 72%;
         margin-left: 4%;
@@ -38,9 +38,7 @@
     
         display: flex;
         justify-content: space-between;
-
     }
-
     .img__search {
         width: 20px;
         height: 20px;
@@ -48,14 +46,20 @@
         left: 30px;
         margin-top: 10px;
     }
-
-    .search-bar input[type="text"] {
+    .search__bar input[type="text"] {
+        border: none;
+        height: 40px;
         width: 100%;
         background-color: #E9ECEF;
         border-radius: 12px;
         text-indent: 40px;
+        transition: 500ms;
     }
-    .button_Login {
+    .search__bar input[type="text"]:hover {
+        background-color: #F8F9FA;
+    }
+    .button__login {
+        border: none;
         background-color: #FF2253;
         border-radius: 10px;
         padding: 5px;
@@ -93,11 +97,21 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
-       font-size: 28px;
+        font-size: 28px;
         line-height: 24px;
         color: #FF2253;
     }
-
+    .search__bar{
+        /* margin-right: 10%; */
+        width: 30%;
+        margin-left: 4%;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    
+        display: flex;
+        justify-content: space-between;
+    }
     .img__search {
         width: 20px;
         height: 20px;
@@ -105,30 +119,25 @@
         left: 30px;
         margin-top: 10px;
     }
-
-    .search-bar{
-        width: 30%;
-        margin-left: 10%;
-        height: 40px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    
-        display: flex;
-        justify-content: space-between;
-
-    }
     .search__bar input[type="text"] {
+        border: none;
+        height: 40px;
         width: 100%;
         background-color: #E9ECEF;
         border-radius: 12px;
         text-indent: 40px;
+        transition: 500ms;
     }
-    .menu {
+    .search__bar input[type="text"]:hover {
+        background-color: #F8F9FA;
+    }
+    .button__login {
+        border: none;
         background-color: #FF2253;
         border-radius: 10px;
         padding: 5px;
         color: white;
-    
+
         height: 40px;
         margin: 10px 6px;
         margin-right: 10%;

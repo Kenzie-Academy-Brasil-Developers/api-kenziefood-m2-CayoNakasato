@@ -1,8 +1,10 @@
+import Api from "../controller/api.js"
+import Login from "./login.js"
 
 class Register{
     static registerModal(){
         const principal = document.querySelector(".root")
-
+     
         const divregisterBox = document.createElement("div")
         const registerBox = document.createElement("div")
         const registerBoxTitle = document.createElement("h1")
@@ -33,19 +35,29 @@ class Register{
 
         registerBoxTitle.innerText = "Cadastro"
         registerBoxInputName.placeholder = "Digite seu nome"
+        registerBoxInputName.alt = "Coloqueseu username"
         registerBoxInputEmail.placeholder = "Digite seu email"
+        registerBoxInputEmail.alt = "Coloque seu Email"
+        registerBoxInputEmail.type = "email"
         registerBoxInputPassword.placeholder = "Digite sua senha"
+        registerBoxInputPassword.type = "password"
+        registerBoxInputPassword.alt = "Coloque sua senha"
         registerBoxText.innerText = "Já possui conta?"
         registerBoxRedirect.innerText = "Logue!"
-        registerBoxRedirect.href = "#"
         registerBoxButton.innerText = "Cadastrar"
 
-        registerBoxButton.addEventListener("click", ()=>{
-            Api.registerUser({
-                "name": registerBoxInputName.value,
-                "email": registerBoxInputEmail.value,
-                "password": registerBoxInputPassword.value
-                })
+        registerBoxRedirect.addEventListener("click", ()=>{
+            divregisterBox.classList.add("hidden")
+            Login.loginModal()
+        })
+
+        registerBoxButton.addEventListener("click", ()=>
+            {
+                Api.registerUser({
+                                "name": registerBoxInputName.value,
+                                "email": registerBoxInputEmail.value,
+                                "password": registerBoxInputPassword.value
+                            })
                 divregisterBox.innerHTML = ''
             })
 
@@ -80,7 +92,7 @@ class Register{
         errorBoxButton.innerText = "Voltar"
 
         errorBoxButton.addEventListener("click", ()=>{
-            divError.classList.add("hidden")
+            window.location = "./../index.html"
         })
 
         errorBox.append(errorBoxTitle, errorBoxInfo, errorBoxButton)
@@ -91,6 +103,5 @@ class Register{
     }
 }
 
-Register.registerModal()
 
 export default Register
