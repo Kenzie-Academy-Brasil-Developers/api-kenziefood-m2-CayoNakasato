@@ -1,9 +1,9 @@
 import { ApiRequest } from "../controller/apiRequest.js";
+import { Cart } from "./cartDOM.js";
 class showCase {
     static data = ApiRequest.requisition()
     static async homePage(){   
         let productArray = await this.data
-
         productArray.forEach(element => {
             let productCard = document.createElement("article")
                 productCard.classList="product"
@@ -23,7 +23,22 @@ class showCase {
                         </aside>
                 `
                 document.querySelector(".showCase").appendChild(productCard)
+
         });
+        let showCase = document.querySelector(".showCase")
+        showCase.addEventListener("click",(event)=>{
+            this.addProduct(event)
+        })
+    }
+    static async addProduct(event){
+        let target = event.target
+        if(target.classList.contains("addCart")||target.classList.contains("addCart__img")){
+            let targetProduct = target.closest(".product")
+            let cartEmpty = document.querySelector(".cart__empty")
+            cartEmpty.classList.add("invisible")
+            Cart.createProduct(targetProduct.id)
+            console.log(targetProduct.id)
+        }
     }
 }
 export {showCase}
