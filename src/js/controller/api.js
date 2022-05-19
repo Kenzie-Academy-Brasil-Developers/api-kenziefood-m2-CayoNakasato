@@ -40,7 +40,7 @@ class Api{
         const responseData = await response.json();
         if(!responseData.error){
             
-            localStorage.setItem("token", JSON.stringify(responseData))
+            localStorage.setItem("token", responseData)
             window.location = "/src/pages/dashboard.html"
         }
         else if(responseData.error){
