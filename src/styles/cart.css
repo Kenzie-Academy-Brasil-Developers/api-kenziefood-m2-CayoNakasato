@@ -37,7 +37,7 @@
         align-items: center;
         background-color: rgba(0, 0, 0, .5);
 
-        /* display: none; */
+        display: none;
     }
     .modal{
         margin: 0;
@@ -49,7 +49,7 @@
         box-shadow:  0 0 10px 0 black;
         border-radius: 8px; 
 
-        /* display: none; */
+        display: none;
     }
     .modal__title{
         display: flex;
