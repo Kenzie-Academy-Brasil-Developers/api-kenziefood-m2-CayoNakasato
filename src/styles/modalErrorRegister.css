@@ -1,0 +1,53 @@
+.div__error{
+    background-color: bisque;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__boxError{
+    background-color: lightcoral;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    border-radius: 10px;
+}
+
+.register__boxError__title{
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(226, 250, 9);
+}
+
+.register__boxError__info{
+    font-size: 20px;
+    font-weight: 600;
+    width: 400px;
+    color: #fff;
+}
+
+.register__boxError__btn{
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.register__boxError__btn:hover{
+    cursor: pointer;
+    background-color: aqua;
+    color: #fff
+}
+
+.hidden{
+    display: none;
+}
