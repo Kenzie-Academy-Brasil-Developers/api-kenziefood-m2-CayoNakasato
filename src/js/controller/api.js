@@ -15,18 +15,18 @@ class Api{
         })
         .then(res => res.json())
         .then((res) => {
-            if(res.status === 201){
-                const divRegister = document.querySelector(".divregisterBox")
-                divRegister.innerHTML = ''
-                
+            console.log(res)
+            if(res.id){ 
                 Login.loginModal()
             }else{
+                const principal = document.querySelector(".root")
+                principal.innerHTML = ''
                 Register.registerErrorModal("Ops! Verifique seu email ou senha!")
             }
         })
     }
 
-    static logarUsuario(data){
+    static loginUser(data){
         fetch(
             this.BASIC__URL + "/auth/login",
             {
@@ -41,7 +41,11 @@ class Api{
         .then((res)=>{
             if(res.status === 200){
                 localStorage.setItem("token", res)
-                
+                window.location = "/src/pages/dashboard.html"
+            }else{
+                const principal = document.querySelector(".root")
+                principal.innerHTML = ''
+                Register.registerErrorModal("Ops! Verifique seu email ou senha!")
             }
         })
     }
