@@ -42,15 +42,15 @@ class Login{
         loginBoxButton.innerText = "Logar"
 
         loginBoxRedirect.addEventListener("click", ()=>{
+            loginBox.classList.add("hidden")
             Register.registerModal()
         })
 
         loginBoxButton.addEventListener("click", ()=>{
-            Api.logarUsuario({
+            Api.loginUser({
                 "email": loginBoxInputEmail.value,
                 "password": loginBoxInputPassword.value
             })
-            window.location = "../../pages/dashboard.html"
         })
 
         loginBoxForm.append(loginBoxInputEmail, loginBoxInputPassword)

@@ -55,7 +55,13 @@
 /* #header__Logout__Hover {
     display: none;
 } */
-
+}
+.main__dashBoard{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .container {
     display: flex;
     justify-content: center;
