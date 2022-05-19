@@ -1,23 +1,21 @@
-import ApiRequest from "../controller/apiRequest.js"
+import Api from "../controller/api.js"
 import { showCase } from "./showCaseDOM.js"
 
 
 class Filters {
-    static data = ApiRequest.requisition()
-
     static showCase = document.querySelector(".showCase")
+    static data =  Api.getItem()
+
     
     static async filterPanificadora() {
-        showCase.innerHTML = ''
+        // showCase.innerHTML = ''
         const filter = await data.filter((product) => {
             return product.categoria === "Panificadora"
         })
-        console.log(filter);
-        this.showByCategory(filter)
     }
 
     static async filterFrutas() {
-        showCase.innerHTML = ''
+        // showCase.innerHTML = ''
         const filter = await data.filter((product) => {
             return product.categoria === "Frutas"
         })
@@ -25,7 +23,7 @@ class Filters {
     }
 
     static async filterBebidas() {
-        showCase.innerHTML = ''
+        // showCase.innerHTML = ''
         const filter = await data.filter((product) => {
             return product.categoria === "Bebidas"
         })

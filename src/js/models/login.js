@@ -9,6 +9,8 @@ class Login{
 
         const loginBox = document.createElement("div")
         const loginBoxTitle = document.createElement("h1")
+        const loginBoxHeader = document.createElement("div")
+        const loginBoxButtonExit = document.createElement("button")
         const loginBoxForm = document.createElement("form")
         const loginBoxInputEmail = document.createElement("input")
         const loginBoxInputPassword= document.createElement("input")
@@ -18,7 +20,9 @@ class Login{
         const loginBoxButton = document.createElement("button")
 
         loginBox.classList.add("login__box")
+        loginBoxHeader.classList.add("login__box__header")
         loginBoxTitle.classList.add("login__box__title")
+        loginBoxButtonExit.classList.add("login__box__header__btn__exit")
         loginBoxForm.classList.add("login__box__form")
         loginBoxInputEmail.classList.add("login__box__inputEmail")
         loginBoxInputPassword.classList.add("login__box__inputPassword")
@@ -31,6 +35,7 @@ class Login{
         loginBoxInputPassword.name = "password"
 
         loginBoxTitle.innerText = "Login"
+        loginBoxButtonExit.innerText = "X"
         loginBoxInputEmail.placeholder = "Digite seu email"
         loginBoxInputEmail.type = "email"
         loginBoxInputEmail.alt = "Coloque seu email"
@@ -41,6 +46,10 @@ class Login{
         loginBoxRedirect.innerText = "Registre-se!"
         loginBoxButton.innerText = "Logar"
 
+        loginBoxButtonExit.addEventListener("click", ()=>{
+            window.location = "/index.html"
+        })
+        
         loginBoxRedirect.addEventListener("click", ()=>{
             loginBox.classList.add("hidden")
             Register.registerModal()
@@ -57,7 +66,9 @@ class Login{
 
         loginBoxQuestion.append(loginBoxText, loginBoxRedirect)
 
-        loginBox.append(loginBoxTitle, loginBoxForm, loginBoxQuestion, loginBoxButton)
+        loginBoxHeader.append(loginBoxTitle, loginBoxButtonExit)
+
+        loginBox.append(loginBoxHeader, loginBoxForm, loginBoxQuestion, loginBoxButton)
 
         divloginBox.appendChild(loginBox)
 

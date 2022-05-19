@@ -16,11 +16,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     width: 400px;
     height: 400px;
     border-radius: 10px;
     box-shadow:0px 0px 0px 10px #FCD476 inset;
+}
+
+.login__box__header{
+    display: flex;
+}
+
+.login__box__header__btn__exit{
+    margin-left: 70px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__box__header__btn__exit:hover{
+    cursor: pointer;
 }
 
 .login__box__title{
@@ -64,6 +81,7 @@
     border: none;
     font-size: 20px;
     font-weight: 700;
+    color: black;
 }
 
 .hidden{
