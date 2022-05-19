@@ -68,3 +68,5 @@ const avatarImage = document.querySelector(".avatar__hover")
 avatarImage.addEventListener("click", ()=>{
     
 })
+
+export default Products
