@@ -100,12 +100,13 @@ class Products {
 // FUNÇÃO PARA CRIAÇÃO DE ELEMENTOS - MODAL REGISTRO - BOTÃO FECHAR MODAL - FUNÇÃO TOGLE DAS CATEGORIAS - BOTÃO CRIAR PRODUTO
 
 function showModalRegister() {
+    console.log('tet')
     modalRegister.style.display = 'block'
     fundoModal.style.display = 'block'
 }
 
 
-function createProduct() {
+async function createProduct() {
     const data = {}
 
     data[registerNome.name] = registerNome.value
@@ -114,8 +115,8 @@ function createProduct() {
     data[registerImage.name] = registerImage.value
     data.categoria = category();
 
-    const result = ApiDash.createProduct(data)
-    if(result.message == 'Token is missing'){
+    const result = await ApiDash.createProduct(data)
+    if(result.message != 'Token is missing'){
         modalCreateDenied.style.display = 'flex'
     } else {
         modalCreateAcept.style.display = 'flex'
@@ -143,8 +144,7 @@ function category() {
             }    
         })
     })
-
-  return res
+    return res
 }
 category()
 
