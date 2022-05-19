@@ -15,10 +15,13 @@ class Api{
         })
         .then(res => res.json())
         .then((res) => {
-            if(res.status === "Error" || res.status !== undefined){
-                Register.registerErrorModal(res.message)
-            }else{
+            if(res.status === 201){
+                const divRegister = document.querySelector(".divregisterBox")
+                divRegister.innerHTML = ''
+                
                 Login.loginModal()
+            }else{
+                Register.registerErrorModal("Ops! Verifique seu email ou senha!")
             }
         })
     }
@@ -35,8 +38,11 @@ class Api{
             }
         )
         .then(res => res.json())
-        .then(()=>{
-            window.location = "../pages/dashboard.html";
+        .then((res)=>{
+            if(res.status === 200){
+                localStorage.setItem("token", res)
+                
+            }
         })
     }
 }
