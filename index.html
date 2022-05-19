@@ -8,17 +8,20 @@
     <title>Mercadinho do G4</title>
 </head>
 <body>
-    <header>
-        <h1>Mercadinho do <span>G4</span></h1>
-        <form action="#" class="search__bar">
-            <img class="img__search" src="./src/assert/search.png" alt="Lupa de Pesquisa">
-            <input id="serch-input" type="text" placeholder="Pesquisar Produto">
-        </form>
-        <button class="button__login">Login</button>
-    </header>
+    <section class="root">
+        <header>
+            <h1>Mercadinho do <span>G4</span></h1>
+            <form action="#" class="search__bar">
+                <img class="img__search" src="./src/assert/search.png" alt="Lupa de Pesquisa">
+                <input id="serch-input" type="text" placeholder="Pesquisar Produto">
+            </form>
+            <button class="button__login">Login</button>
+        </header>
+    <main>   
+        <div class="div__login hidden">
 
-
-    <main>
+        </div>
+    </section>
         <aside class="cart">
             <div class="cart__title">
                 <img src="./src/assert/cart_white.svg" class="cart__title__img__cart" alt="Imagem Carrinho">
@@ -28,7 +31,6 @@
                 <img class="cart__empty__img" src="./src/assert/bag-svgrepo-com.svg" alt="sacola vazia">
                 <p class="cart__empty__text">Por enquanto não temos produtos no carrinho</p>
             </div>
-        
             <article class="cart__product">
                 <picture class="cart__product__img">
                     <img src="https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/panqueca.png" alt="panquecas">
@@ -52,11 +54,6 @@
             </article>
         </aside>
     </main>
-
-
-
-
-
     <button id="openCart" class="cart__button"> <img src="./src/assert/cart_white.svg" alt="Imagem Carrinho"> Carrinho</button>
     <section class="modal__container">
         <aside class="modal">
@@ -92,5 +89,6 @@
             </div>
         </aside>
     </section>
+<script type="module" src="./src/js/script.js"></script>
 </body>
 </html>
