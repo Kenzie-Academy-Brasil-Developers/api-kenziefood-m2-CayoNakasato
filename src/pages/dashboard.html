@@ -13,23 +13,30 @@
 
 <body>
     <header id="header">
-        <div id="header__container">
+        <section id="header__container">
             <h1>Mercadinho da <strong>G4</strong></h1>
             <div id="header__container__itens">
-                <button class="header__container__button">Menu</button>
-                <button class="header__container__button">Dashboard</button>
-                <div id="container__itens__searchbar">
-                    <img src="../assert/search.svg">
-                    <input placeholder="Pesquisar por produto">
+                <div class="header__buttons_wrap">
+                    <button class="header__container__button">Menu</button>
+                    <button class="header__container__button">Dashboard</button>
                 </div>
-                <img src="../assert/user.svg">
-                <div id="header__Logout__Hover">
-                    <p>Mercadinho da <strong>G4</strong></p>
-                    <button>Logout</button>
+
+                <form id="container__itens__searchbar">
+                    <img class="img__search" src="../assert/search.svg" alt="Lupa de Pesquisa">
+                    <input id="serch-input" placeholder="Pesquisar por produto">
+                </form>
+
+                <div class="header__container_logout">
+                    <img class="user__avatar__dropdown" src="../assert/user.svg">
+                    <div id="header__content__dropdown">
+                        <p>Mercadinho da <strong>G4</strong></p>
+                        <button class="header__logout__button">Logout</button>
+                    </div>
                 </div>
             </div>
-        </div>
+    </section>
     </header>
+
     <main>
         <div class="container">
             <nav id="list">
