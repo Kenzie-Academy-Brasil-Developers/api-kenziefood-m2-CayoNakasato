@@ -24,23 +24,21 @@ const filterBebidasDashboard = document.querySelector("#filter_dashboard_bebidas
 
 showCase.homePage()
 Cart.emptyCart()
+filterTodosHomePage.addEventListener("click", () => {
+    FilterHomePage.showAll()
+})
 
 btnLogar.addEventListener("click", () => {
     Login.loginModal()
     loginDiv.classList.remove("hidden")
 })
 
-filterTodosHomePage.addEventListener("click", () => {
-    FilterHomePage.showAll()
-})
-
-filterPanificadoraHomePage.addEventListener("click", async () => {
-
+filterPanificadoraHomePage.addEventListener("click", () => {
     homePageContent.innerHTML = ''
     FilterHomePage.filterPanificadora()
 })
 
-filterFrutasHomePage.addEventListener("click", async () => {
+filterFrutasHomePage.addEventListener("click", () => {
     homePageContent.innerHTML = ''
     FilterHomePage.filterFrutas()
 })
@@ -50,24 +48,24 @@ filterBebidasHomePage.addEventListener("click", () => {
     FilterHomePage.filterBebidas()
 })
 
-filterTodosDashboard.addEventListener("click", () => {
-    console.log('oi');
-    Products.inputProducts()
-})
+// filterTodosDashboard.addEventListener("click", () => {
+//     console.log('oi');
+//     Products.inputProducts()
+// })
 
-filterPanificadoraDashboard.addEventListener("click", () => {
-    dashboardContent.innerHTML = ''
-    FilterDashboard.filterPanificadora()
-})
+// filterPanificadoraDashboard.addEventListener("click", () => {
+//     dashboardContent.innerHTML = ''
+//     FilterDashboard.filterPanificadora()
+// })
 
-filterFrutasDashboard.addEventListener("click", async () => {
-    dashboardContent.innerHTML = ''
-    FilterDashboard.filterFrutas()
-})
+// filterFrutasDashboard.addEventListener("click", () => {
+//     dashboardContent.innerHTML = ''
+//     FilterDashboard.filterFrutas()
+// })
 
-filterBebidasDashboard.addEventListener("click", () => {
-    dashboardContent.innerHTML = ''
-    FilterDashboard.filterBebidas()
-})
+// filterBebidasDashboard.addEventListener("click", () => {
+//     dashboardContent.innerHTML = ''
+//     FilterDashboard.filterBebidas()
+// })
 
 
