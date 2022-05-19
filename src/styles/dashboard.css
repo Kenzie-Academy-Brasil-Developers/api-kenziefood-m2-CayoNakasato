@@ -1,17 +1,18 @@
-@import url("./filter.css");
+@import url(./reset.css);
 @import url("./dashboard/globalDashboard.css");
+@import url(./dashboard/headerDashboard.css);
+@import url("./filter.css");
 
 
-
-#header {
+/* #header {
     width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: center;
     background-color: #FFFFFF;
-}
+} */
 
-#header__container {
+/* #header__container {
     display: flex;
     width: 90vw;
     height: inherit;
@@ -35,9 +36,9 @@
     background-color: #FF2253;
     border-radius: 2vw;
     color: #F8F9FA;
-}
+} */
 
-#container__itens__searchbar {
+/* #container__itens__searchbar {
     width: 15vw;
     height: 70%;
     background-color: #E9ECEF;
@@ -49,18 +50,11 @@
 #container__itens__searchbar input {
     background-color: #E9ECEF;
     border: none;
-}
+} */
 
-#header__Logout__Hover {
+/* #header__Logout__Hover {
     display: none;
-}
-
-main {
-    width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+} */
 
 .container {
     display: flex;
@@ -82,8 +76,6 @@ main {
     width: 45%;
     justify-content: space-between;
 }
-
-
 
 .itens__category {
     font-weight: 500;
