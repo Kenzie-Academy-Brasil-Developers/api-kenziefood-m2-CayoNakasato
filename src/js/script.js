@@ -12,3 +12,4 @@ btnLogar.addEventListener("click", ()=>{
 
 showCase.homePage()
 Cart.emptyCart()
+Cart.cartMobile()
