@@ -39,7 +39,7 @@ class Api{
         )
         .then(res => res.json())
         .then((res)=>{
-            if(res.status === 200){
+            if(res.status !== 404){
                 localStorage.setItem("token", res)
                 window.location = "/src/pages/dashboard.html"
             }else{
