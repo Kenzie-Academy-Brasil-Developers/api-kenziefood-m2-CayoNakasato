@@ -25,19 +25,19 @@ const filterBebidasDashboard = document.querySelector("#filter_dashboard_bebidas
 showCase.homePage()
 Cart.emptyCart()
 
-btnLogar.addEventListener("click", ()=>{
+btnLogar.addEventListener("click", () => {
     Login.loginModal()
     loginDiv.classList.remove("hidden")
 })
 
 filterTodosHomePage.addEventListener("click", () => {
-    showCase.homePage()
+    FilterHomePage.showAll()
 })
 
 filterPanificadoraHomePage.addEventListener("click", async () => {
 
     homePageContent.innerHTML = ''
-    await FilterHomePage.filterPanificadora()
+    FilterHomePage.filterPanificadora()
 })
 
 filterFrutasHomePage.addEventListener("click", async () => {

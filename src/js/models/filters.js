@@ -5,33 +5,38 @@ const homePageContent = document.querySelector(".showCase")
 
 class FilterHomePage {
     
+    static async showAll() {
+        
+    }
+
     static async filterPanificadora() {
         const data = await Api.getItem()
-        // showCase.innerHTML = ''
+
         const filter = await data.filter((product) => {
             return product.categoria === "Panificadora"
         })
-        console.log('oi');
-        return this.showByCategory(filter)
+        this.showByCategoryHomePage(filter)
     }
 
     static async filterFrutas() {
-        // showCase.innerHTML = ''
+        const data = await Api.getItem()
+
         const filter = await data.filter((product) => {
             return product.categoria === "Frutas"
         })
-        this.showByCategory(filter)
+        this.showByCategoryHomePage(filter)
     }
 
     static async filterBebidas() {
-        // showCase.innerHTML = ''
+        const data = await Api.getItem()
+
         const filter = await data.filter((product) => {
             return product.categoria === "Bebidas"
         })
-        this.showByCategory(filter)
+        this.showByCategoryHomePage(filter)
     }
 
-    static showByCategory(category) {
+    static showByCategoryHomePage(category) {
         
         category.forEach(element => {
             const productCard = document.createElement("article")
