@@ -53,6 +53,8 @@ class Products {
         
         const data = await ApiDash.getItem()
 
+        console.log(data)
+
         data.forEach(element => {
             const table = document.createElement('table')
             const line = document.createElement('tr')
