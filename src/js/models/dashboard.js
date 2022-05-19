@@ -78,16 +78,18 @@ class Products {
         });
     }
 }
+console.log(ApiDash.TOKEN)
 
 // FUNÇÃO PARA CRIAÇÃO DE ELEMENTOS - MODAL REGISTRO - BOTÃO FECHAR MODAL - FUNÇÃO TOGLE DAS CATEGORIAS - BOTÃO CRIAR PRODUTO
 
 function showModalRegister() {
+    console.log('tet')
     modalRegister.style.display = 'block'
     fundoModal.style.display = 'block'
 }
 
 
-function createProduct() {
+async function createProduct() {
     const data = {}
 
     data[registerNome.name] = registerNome.value
@@ -96,15 +98,17 @@ function createProduct() {
     data[registerImage.name] = registerImage.value
     data.categoria = 'Panificadora'
 
-    const result = ApiDash.createProduct(data)
-    if(result.message == 'Token is missing'){
+    const result = await ApiDash.createProduct(data)
+    if(result.message != 'Token is missing'){
         modalCreateDenied.style.display = 'flex'
     } else {
         modalCreateAcept.style.display = 'flex'
     }
-     setTimeout(() => {
-         location.reload('/dashboard.html')
-     }, 3000);
+
+    console.log(result)
+    //  setTimeout(() => {
+    //      location.reload('/dashboard.html')
+    //  }, 3000);
 }
 
 function closeModal() {
@@ -121,11 +125,11 @@ function category (categoria) {
             } else {
                 elem.classList.remove('register__category')
                 elem.classList.add('register__category__selected')
-                let res = elem.textContent         
+                res = elem.textContent         
             }    
         })
     })
-    console.log(res)
+    
     return res
 }
 category()

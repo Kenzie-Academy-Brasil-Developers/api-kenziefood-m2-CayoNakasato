@@ -4,6 +4,10 @@ body {
     font-family: 'Inter';
 }
 
+main {
+    margin-left: 5vw;
+}
+
 #header {
     width: 100vw;
     height: 10vh;
@@ -284,7 +288,7 @@ strong {
     background-color: #FF2253;
     border-radius: 2vw;
     color: #F8F9FA;
-    margin-top: 7vh;
+    margin-top: 3vh;
     margin-left: 5%;
     font-size: 2vh;
 }
@@ -433,7 +437,9 @@ strong {
 
 #fundo__modal {
     display: none;
-    position: absolute;
+    position: fixed;
+    top: 10vh;
+    left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 0;
@@ -443,8 +449,9 @@ strong {
 
 #modal__register {
     display: none;
-    position: absolute;
-    margin-top: -5vh;
+    position: fixed;
+    top: 5vh;
+    left: 33vw;
     width: 30vw;
     height: 90vh;
     border-radius: 0.8vw;
