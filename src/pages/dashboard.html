@@ -9,7 +9,7 @@
     <script defer type="module" src="../js/controller/api.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body id="body">
     <header id="header" >
         <div id="header__container">
             <h1>Mercadinho da <strong>G4</strong></h1>
@@ -37,7 +37,7 @@
                     <li class="list__itens"><p class="itens__category">Frutas</p></li>
                     <li class="list__itens"><p class="itens__category">Bebidas</p></li>
                 </div>
-                <button class="list__ul__button">Adicionar novo produto</button>
+                <button id="ul__button" class="list__ul__button">Adicionar novo produto</button>
             </nav>
         </div>
         <div id="container__products">    
@@ -49,52 +49,13 @@
                     <td class="container__table__header"  width="10%">Acções</td>
                 </tr>
             </table>
-            <table class="container__table__cells">    
-                <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product1.svg">Mousse de morango com frutas</td>
-                    <td class="container__table__cell" width="25%">Bebidas</td>
-                    <td class="container__table__cell"  width="40%">Sobremessa fácil, rápida e muito saborosa</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
-                </tr>
-            </table>
-            <table class="container__table__cells">    
-                <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product2.svg">Panqueca de banana com aveia </td>
-                    <td class="container__table__cell" width="25%">Bebidas Frutas</td>
-                    <td class="container__table__cell"  width="40%">Esta receita serve muito bem 2 pessoas...</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
-                </tr>
-            </table>
-            <table class="container__table__cells">    
-                <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product3.svg">Pastel de verduras vegano</td>
-                    <td class="container__table__cell" width="25%">Bebidas Bebidas</td>
-                    <td class="container__table__cell"  width="40%">Todos nós fervemos vegetais, salteamos...</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
-                </tr>
-            </table>
-            <table class="container__table__cells">    
-                <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product4.svg">Pizza vegetariana de palmito</td>
-                    <td class="container__table__cell" width="25%">Bebidas Bebidas</td>
-                    <td class="container__table__cell"  width="40%">Esse é um dos sabores de pizza mais ped...</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
-                </tr>
-            </table>
-            <table class="container__table__cells">    
-                <tr class="table__cells">
-                    <td class="container__table__product" width="25%"><img src="../assert/product5.svg">Laranja Pera Fresca Kenzie 5kg</td>
-                    <td class="container__table__cell" width="25%">Bebidas Bebidas</td>
-                    <td class="container__table__cell"  width="40%">O vinho é rico em compostos nutricionais...</td>
-                    <td class="container__table__actions"  width="10%"><img class="edit__image" src="../assert/edit.svg"><img src="../assert/trash.svg"></td>
-                </tr>
-            </table>
         </div>
+        <div id="fundo__modal"></div> 
         <form action="" id="modal__register">
             <div class="register__header">
                 <div class="modal__resgister__header">
                     <p>Cadastro de produtos</p>
-                    <img src="../assert/delete.svg">
+                    <img id="modal__register__trash" src="../assert/delete.svg">
                 </div>
             </div>     
             <div class="register__body">
@@ -102,44 +63,44 @@
                     <div>
                         <span class="register__inputs__span">Nome do Produto</span>
                     </div>
-                    <input class="modal__register__input" placeholder="Digitar o nome">
+                    <input id="modal__register_inputs__nome" name="nome" class="modal__register__input" placeholder="Digitar o nome">
                 </div>
                 <div class="modal__register__inputs">
                     <div class="register__inputs__span">
                         <span>Descrição</span>
                     </div>
-                    <input class="modal__register__input" placeholder="Digitar a descrição">
+                    <input id="modal__register_inputs__descricao" name="descricao" class="modal__register__input" placeholder="Digitar a descrição">
                 </div>
                 <div class="register__inputs__category">
                     <div class="register__inputs__span">
                         <span>Categorias</span>
                     </div>
-                    <div class="modal__register__category">
-                        <div class="register__category">
-                            <p>Panificadora</p>
-                        </div>
-                        <div class="register__category">
-                            <p>Frutas</p>
-                        </div>
-                        <div class="register__category">
-                            <p>Bebidas</p>
-                        </div>
+                    <div  id="modal__register__category" class="modal__register__category">
+                        <p name="Panificadora" id="register__category_Panificadora" class="register__category">
+                            Panificadora
+                        </p>
+                        <p name="Frutas" id="register__category_frutas" class="register__category">
+                            Frutas
+                        </p>
+                        <p name="Bebidas" id="register__category_bebidas" class="register__category">
+                            Bebidas
+                        </p>
                     </div>
                 </div>
                 <div class="modal__register__inputs">
                     <div class="register__inputs__span">
                         <span>Valor do Produto</span>
                     </div>
-                    <input class="modal__register__input" placeholder="Digitar o valor aqui">
+                    <input id="modal__register_inputs__preco" name="preco" class="modal__register__input" placeholder="Digitar o valor aqui">
                 </div>
                 <div class="modal__register__inputs">
                     <div class="register__inputs__span">
                         <span>Link da imagem</span>
                     </div>
-                    <input class="modal__register__input" placeholder="Inserir link">
+                    <input id="modal__register_inputs__imagem" name="imagem" class="modal__register__input" placeholder="Inserir link">
                 </div>
             </div>
-            <button id="modal__regiter__button">Cadastrar Produto</button>
+            <button type="button" id="modal__regiter__button">Cadastrar Produto</button>
         </form>
         <form action="" id="modal__edit">
             <div class="register__header">   
@@ -166,13 +127,13 @@
                         <span>Categorias</span>
                     </div>    
                     <div class="modal__register__category">
-                        <div class="register__category">
+                        <div class="register__category__edit">
                             <span>Panificadora</option>
                         </div>    
-                        <div class="register__category">
+                        <div class="register__category__edit">
                             <span>Frutas</span>
                         </div>    
-                        <div class="register__category">     
+                        <div class="register__category__edit">     
                             <span>Bebidas</opt>
                         </div>        
                     </div>
@@ -222,7 +183,8 @@
             <div>
                 <span>Ocorreu algum erro, o produto não foi adicionado</span>
             </div>
-        </div>           
+        </div>
+          
     </main>
 </body>
 </html>
