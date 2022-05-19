@@ -22,6 +22,22 @@
     border-radius: 10px;
     box-shadow:0px 0px 0px 10px #FCD476 inset;
 }
+.register__box__header{
+    display: flex;
+}
+
+.register__box__header__btn__exit{
+    margin-left: 60px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__box__header__btn__exit:hover{
+    cursor: pointer;
+}
 
 .register__box__title{
     font-size: 30px;
@@ -66,7 +82,12 @@
     font-weight: 700;
 }
 
+.hidden{
+    display: none;
+}
+
 .register__box__redirectText:hover{
+    cursor: pointer;
     text-decoration: underline;
     color: darkblue;
 }

@@ -7,6 +7,8 @@ class Register{
      
         const divregisterBox = document.createElement("div")
         const registerBox = document.createElement("div")
+        const registerBoxHeader = document.createElement("div")
+        const registerBoxButtonExit = document.createElement("button")
         const registerBoxTitle = document.createElement("h1")
         const registerBoxForm = document.createElement("form")
         const registerBoxInputName = document.createElement("input")
@@ -19,6 +21,8 @@ class Register{
 
         divregisterBox.classList.add("div__register")
         registerBox.classList.add("register__box")
+        registerBoxHeader.classList.add("register__box__header")
+        registerBoxButtonExit.classList.add("register__box__header__btn__exit")
         registerBoxTitle.classList.add("register__box__title")
         registerBoxForm.classList.add("register__box__form")
         registerBoxInputName.classList.add("register__box__inputEmail")
@@ -34,6 +38,7 @@ class Register{
         registerBoxInputPassword.name = "password"
 
         registerBoxTitle.innerText = "Cadastro"
+        registerBoxButtonExit.innerText = "X"
         registerBoxInputName.placeholder = "Digite seu nome"
         registerBoxInputName.alt = "Coloqueseu username"
         registerBoxInputEmail.placeholder = "Digite seu email"
@@ -46,25 +51,32 @@ class Register{
         registerBoxRedirect.innerText = "Logue!"
         registerBoxButton.innerText = "Cadastrar"
 
+        registerBoxButtonExit.addEventListener("click", ()=>{
+            window.location = "/index.html"
+        })
+     
         registerBoxRedirect.addEventListener("click", ()=>{
-                Login.loginModal()
-                divregisterBox.innerHTML = ''
+            divregisterBox.classList.add("hidden")
+            Login.loginModal()
         })
 
-        registerBoxButton.addEventListener("click", ()=>{
-            Api.registerUser({
-                "name": registerBoxInputName.value,
-                "email": registerBoxInputEmail.value,
-                "password": registerBoxInputPassword.value
-                })
+        registerBoxButton.addEventListener("click", ()=>
+            {
+                Api.registerUser({
+                                "name": registerBoxInputName.value,
+                                "email": registerBoxInputEmail.value,
+                                "password": registerBoxInputPassword.value
+                            })
                 divregisterBox.innerHTML = ''
             })
 
         registerBoxForm.append(registerBoxInputName,registerBoxInputEmail, registerBoxInputPassword)
-
+        
         registerBoxQuestion.append(registerBoxText, registerBoxRedirect)
 
-        registerBox.append(registerBoxTitle, registerBoxForm, registerBoxQuestion, registerBoxButton)
+        registerBoxHeader.append(registerBoxTitle, registerBoxButtonExit)
+
+        registerBox.append(registerBoxHeader, registerBoxForm, registerBoxQuestion, registerBoxButton)
 
         divregisterBox.appendChild(registerBox)
 
@@ -91,7 +103,7 @@ class Register{
         errorBoxButton.innerText = "Voltar"
 
         errorBoxButton.addEventListener("click", ()=>{
-            divError.classList.add("hidden")
+            window.location = "./../index.html"
         })
 
         errorBox.append(errorBoxTitle, errorBoxInfo, errorBoxButton)

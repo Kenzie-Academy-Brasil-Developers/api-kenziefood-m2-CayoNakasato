@@ -46,6 +46,12 @@ strong {
     color: #F8F9FA;
 }
 
+.header__container__button:hover{
+    cursor: pointer;
+    background-color: #d65f79 ;
+    color: purple;
+}
+
 #container__itens__searchbar {
     width: 15vw;
     height: 70%;
@@ -64,7 +70,7 @@ strong {
     display: none;
 }
 
-main {
+.main__dashBoard{
     width: 100vw;
     display: flex;
     flex-wrap: wrap;

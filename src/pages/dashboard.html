@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,44 +10,58 @@
     <script defer type="module" src="../js/controller/api.js"></script>
     <title>Document</title>
 </head>
-<body id="body">
-    <header id="header" >
-        <div id="header__container">
+
+
+<body>
+    <header id="header">
+        <section id="header__container">
             <h1>Mercadinho da <strong>G4</strong></h1>
             <div id="header__container__itens">
-                <button class="header__container__button">Menu</button>
+                <button class="header__container__button" id="header__button__menu">Menu</button>
                 <button class="header__container__button">Dashboard</button>
                 <div id="container__itens__searchbar">
                     <img src="../assert/search.svg">
                     <input placeholder="Pesquisar por produto">
                 </div>
-                <img src="../assert/user.svg">    
-                <div id="header__Logout__Hover">
-                    <p>Mercadinho da <strong>G4</strong></p>
-                    <button>Logout</button>
+                <div class="box__logout">
+                    <img src="../assert/user.svg" class="avatar__hover">    
+                    <div id="header__Logout__Hover">
+                        <p>Mercadinho da <strong>G4</strong></p>
+                        <button>Logout</button>
+                    </div>
                 </div>                
+
             </div>
-        </div>
+        </section>
     </header>
+
     <main>
         <div class="container">
             <nav id="list">
                 <div id="list__ul">
-                    <li class="list__itens__selected"><p class="itens__category">Todos</p></li>
-                    <li class="list__itens"><p class="itens__category">Panificadora</p></li>
-                    <li class="list__itens"><p class="itens__category">Frutas</p></li>
-                    <li class="list__itens"><p class="itens__category">Bebidas</p></li>
+                    <li class="list__itens__selected ">
+                        <p class="itens__category">Todos</p>
+                    </li>
+                    <li class="list__itens">
+                        <p class="itens__category">Panificadora</p>
+                    </li>
+                    <li class="list__itens">
+                        <p class="itens__category">Frutas</p>
+                    </li>
+                    <li class="list__itens">
+                        <p class="itens__category">Bebidas</p>
+                    </li>
                 </div>
                 <button id="ul__button" class="list__ul__button">Adicionar novo produto</button>
             </nav>
         </div>
-        <div id="container__products">    
-            <table id="container__table__header" >
+        <div id="container__products">
+            <table id="container__table__header">
                 <tr id="container__table__line">
                     <td class="container__table__header" width="25%">Produto</td>
-                    <td class="container__table__header"  width="25%">Categorias</td>
-                    <td class="container__table__header"  width="40%">Descrição</td>
-                    <td class="container__table__header"  width="10%">Acções</td>
+                    <td class="container__table__header" width="25%">Categorias</td>
+                    <td class="container__table__header" width="40%">Descrição</td>
+                    <td class="container__table__header" width="10%">Acções</td>
                 </tr>
             </table>
         </div>
@@ -57,7 +72,7 @@
                     <p>Cadastro de produtos</p>
                     <img id="modal__register__trash" src="../assert/delete.svg">
                 </div>
-            </div>     
+            </div>
             <div class="register__body">
                 <div class="modal__register__inputs">
                     <div>
@@ -103,12 +118,12 @@
             <button type="button" id="modal__regiter__button">Cadastrar Produto</button>
         </form>
         <form action="" id="modal__edit">
-            <div class="register__header">   
+            <div class="register__header">
                 <div class="modal__resgister__header">
                     <p>Cadastro de produtos</p>
                     <img src="../assert/delete.svg">
                 </div>
-            </div>    
+            </div>
             <div class="register__body">
                 <div class="modal__register__inputs">
                     <div class="register__inputs__span">
@@ -120,22 +135,22 @@
                     <div class="register__inputs__span">
                         <span>Descrição</span>
                     </div>
-                        <input class="modal__register__input" placeholder="Digitar a descrição">
+                    <input class="modal__register__input" placeholder="Digitar a descrição">
                 </div>
                 <div class="register__inputs__category">
                     <div class="register__inputs__span">
                         <span>Categorias</span>
-                    </div>    
+                    </div>
                     <div class="modal__register__category">
                         <div class="register__category__edit">
                             <span>Panificadora</option>
-                        </div>    
-                        <div class="register__category__edit">
+                        </div>
+                        <div class="register__category">
                             <span>Frutas</span>
-                        </div>    
-                        <div class="register__category__edit">     
+                        </div>
+                        <div class="register__category">
                             <span>Bebidas</opt>
-                        </div>        
+                        </div>
                     </div>
                 </div>
                 <div class="modal__register__inputs">
@@ -154,7 +169,7 @@
             <div class="modal__edit__buttons">
                 <button id="modal__edit__del">Excluir</button>
                 <button id="modal__edit__save">Salvar alterações</button>
-            </div>    
+            </div>
         </form>
         <div id="modal__edit__delete">
             <div class="modal__header">
@@ -172,7 +187,7 @@
             <div class="modal__status__acept__header">
                 <span>Status</span>
             </div>
-            <div  class="modal__status__acept__header__phrase">
+            <div class="modal__status__acept__header__phrase">
                 <span>Produto adicionado com sucesso</span>
             </div>
         </div>
@@ -184,7 +199,7 @@
                 <span>Ocorreu algum erro, o produto não foi adicionado</span>
             </div>
         </div>
-          
     </main>
 </body>
+
 </html>

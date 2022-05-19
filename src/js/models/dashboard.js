@@ -87,8 +87,6 @@ function showModalRegister() {
 }
 
 
-
-
 function createProduct() {
     const data = {}
 
@@ -104,13 +102,9 @@ function createProduct() {
     } else {
         modalCreateAcept.style.display = 'flex'
     }
-
-
-
-    // setTimeout(() => {
-    //     location.reload('/dashboard.html')
-    // }, 3000);
-
+     setTimeout(() => {
+         location.reload('/dashboard.html')
+     }, 3000);
 }
 
 function closeModal() {
@@ -140,4 +134,16 @@ category()
 
 Products.inputProducts()
 
+
+
+const btnHomePage = document.querySelector("#header__button__menu")
+
+btnHomePage.addEventListener("click", ()=>{
+    window.location = "../../index.html"
+})
+
+const avatarImage = document.querySelector(".avatar__hover")
+avatarImage.addEventListener("click", ()=>{
+    
+})
 
