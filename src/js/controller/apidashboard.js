@@ -2,7 +2,6 @@ class ApiDash{
     static BASIC__URL = "https://api-kenzie-food.herokuapp.com"
     static TOKEN = localStorage.getItem("token")
     static getItem () {
-        console.log(this.TOKEN)
         const resp = fetch(`${this.BASIC__URL}/my/products`,{
             method: "GET",
             headers: {
