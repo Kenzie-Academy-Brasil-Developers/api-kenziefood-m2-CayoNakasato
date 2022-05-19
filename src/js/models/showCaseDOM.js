@@ -1,5 +1,5 @@
 import { ApiRequest } from "../controller/apiRequest.js";
-class showCase extends ApiRequest{
+class showCase {
     static data = ApiRequest.requisition()
     static async homePage(){   
         let body = document.querySelector("body")
