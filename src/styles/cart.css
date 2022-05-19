@@ -162,6 +162,7 @@
     }
     .cart{
         margin-top: 10px;
+        margin-left: 30px;
         width: 300px;
         height: 400px;
         display: flex;
