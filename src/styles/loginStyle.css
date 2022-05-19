@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     width: 400px;
     height: 400px;
     border-radius: 10px;
@@ -64,6 +64,7 @@
     border: none;
     font-size: 20px;
     font-weight: 700;
+    color: black;
 }
 
 .hidden{

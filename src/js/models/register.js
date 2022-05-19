@@ -46,6 +46,11 @@ class Register{
         registerBoxRedirect.innerText = "Logue!"
         registerBoxButton.innerText = "Cadastrar"
 
+        divregisterBox.addEventListener("click", ()=>{
+            divregisterBox.classList.add("hidden")
+            registerBox.classList.add("hidden")
+        })
+
         registerBoxRedirect.addEventListener("click", ()=>{
             divregisterBox.classList.add("hidden")
             Login.loginModal()
