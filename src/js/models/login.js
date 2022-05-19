@@ -46,6 +46,11 @@ class Login{
             Register.registerModal()
         })
 
+        divloginBox.addEventListener("click", ()=>{
+            divloginBox.classList.add("hidden")
+            loginBox.classList.add("hidden")
+        })
+
         loginBoxButton.addEventListener("click", ()=>{
             Api.loginUser({
                 "email": loginBoxInputEmail.value,
