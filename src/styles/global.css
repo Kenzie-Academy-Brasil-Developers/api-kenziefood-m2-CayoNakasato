@@ -3,6 +3,16 @@
 body {
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
+    background-color: #F9F9F9;
+    overflow-x: hidden;
 }
 
-
+button {
+    font-family: 'Poppins';
+    font-size: 1em;
+    border-radius: 10px;
+    border: none;
+    background-color: #FF2253;
+    color: #FFFFFF;
+    padding: 5px 10px;
+}
