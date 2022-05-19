@@ -47,16 +47,17 @@ class Register{
         registerBoxButton.innerText = "Cadastrar"
 
         registerBoxRedirect.addEventListener("click", ()=>{
-                Login.loginModal()
-                divregisterBox.innerHTML = ''
+            divregisterBox.classList.add("hidden")
+            Login.loginModal()
         })
 
-        registerBoxButton.addEventListener("click", ()=>{
-            Api.registerUser({
-                "name": registerBoxInputName.value,
-                "email": registerBoxInputEmail.value,
-                "password": registerBoxInputPassword.value
-                })
+        registerBoxButton.addEventListener("click", ()=>
+            {
+                Api.registerUser({
+                                "name": registerBoxInputName.value,
+                                "email": registerBoxInputEmail.value,
+                                "password": registerBoxInputPassword.value
+                            })
                 divregisterBox.innerHTML = ''
             })
 
@@ -91,7 +92,7 @@ class Register{
         errorBoxButton.innerText = "Voltar"
 
         errorBoxButton.addEventListener("click", ()=>{
-            divError.classList.add("hidden")
+            window.location = "./../index.html"
         })
 
         errorBox.append(errorBoxTitle, errorBoxInfo, errorBoxButton)
