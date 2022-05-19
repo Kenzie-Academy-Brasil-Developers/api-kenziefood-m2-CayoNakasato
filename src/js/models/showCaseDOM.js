@@ -7,22 +7,10 @@ class showCase extends ApiRequest{
         let main = document.createElement("main")
         body.appendChild(main)
 
-        let navbar = document.createElement("nav")
-        navbar.innerHTML=`
-            <button class="filter">Todos</button>
-            <button class="filterBread">Panificadora</button>
-            <button class="filterFruit">Frutas</button>
-            <button class="filterDrink">Bebidas</button>
-            
-        `
-        main.appendChild(navbar)
-
         let showCase = document.createElement("section")
         showCase.classList="showCase"
         main.appendChild(showCase)
-    }
 
-    static async displayProducts(){
         let productArray = await this.data
         console.log(productArray)
         productArray.forEach(element => {
@@ -46,7 +34,7 @@ class showCase extends ApiRequest{
                     </article>
                 `
                 document.querySelector(".showCase").appendChild(productCard)
-            });
+        });
     }
 }
 export {showCase}
