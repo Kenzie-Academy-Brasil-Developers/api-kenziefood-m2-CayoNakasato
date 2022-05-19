@@ -22,8 +22,12 @@ const filterPanificadoraDashboard = document.querySelector("#filter__dashboard__
 const filterFrutasDashboard = document.querySelector("#filter_dashboard_frutas")
 const filterBebidasDashboard = document.querySelector("#filter_dashboard_bebidas")
 
+
 showCase.homePage()
 Cart.emptyCart()
+Cart.cartMobile()
+
+
 filterTodosHomePage.addEventListener("click", () => {
     FilterHomePage.showAll()
 })
@@ -67,5 +71,3 @@ filterBebidasHomePage.addEventListener("click", () => {
 //     dashboardContent.innerHTML = ''
 //     FilterDashboard.filterBebidas()
 // })
-
-

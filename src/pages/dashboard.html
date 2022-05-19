@@ -26,7 +26,7 @@
                     <img src="../assert/user.svg" class="avatar__hover">    
                     <div id="header__Logout__Hover">
                         <p>Mercadinho da <strong>G4</strong></p>
-                        <button>Logout</button>
+                        <button class="header__btn__logout">Logout</button>
                     </div>
                 </div>                
 
@@ -51,7 +51,7 @@
                         <p class="itens__category">Bebidas</p>
                     </li>
                 </div>
-                <button class="list__ul__button">Adicionar novo produto</button>
+                <button id ="ul__button" class="list__ul__button">Adicionar novo produto</button>
             </nav>
         </section>
         <div id="container__products">    
@@ -114,11 +114,12 @@
                 </tr>
             </table>
         </div>
+        <div id="fundo__modal"></div>
         <form action="" id="modal__register">
             <div class="register__header">
                 <div class="modal__resgister__header">
                     <p>Cadastro de produtos</p>
-                    <img src="../assert/delete.svg">
+                    <img src="../assert/delete.svg" id="modal__register__trash">
                 </div>
             </div>
             <div class="register__body">
@@ -163,7 +164,7 @@
                     <input class="modal__register__input" placeholder="Inserir link">
                 </div>
             </div>
-            <button id="modal__regiter__button">Cadastrar Produto</button>
+            <button type="submit" id="modal__regiter__button">Cadastrar Produto</button>
         </form>
         <form action="" id="modal__edit">
             <div class="register__header">
