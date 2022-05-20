@@ -176,7 +176,8 @@ strong {
 }
 
 .edit__image {
-    margin-right: 2vw;
+    margin-right: 3vw;
+
 }
 
 .register__header {
@@ -456,4 +457,9 @@ strong {
     height: 90vh;
     border-radius: 0.8vw;
     background-color: #fff;
+}
+
+.container__table__actions {
+    display: flex;
+    justify-content: flex-start;
 }

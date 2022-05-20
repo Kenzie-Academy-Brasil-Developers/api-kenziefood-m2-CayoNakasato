@@ -1,6 +1,7 @@
 class ApiDash{
     static BASIC__URL = "https://api-kenzie-food.herokuapp.com"
-    static TOKEN = localStorage.getItem("token")
+    static TOKEN = localStorage.getItem('token')
+
     static getItem () {
         const resp = fetch(`${this.BASIC__URL}/my/products`,{
             method: "GET",
@@ -19,13 +20,23 @@ class ApiDash{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${this.TOKEN}`,
+                "Authorization": `Bearer ${this.TOKEN}`,
             },
             body: JSON.stringify(data),
         })
         .then((res) => res.json())
-        .then((res) => res)
+        .then((res) => console.log(res))
         .catch((error) => error)    
+    }
+
+    static async deletePost(id) {
+        const response = await fetch(`https://api-blog-m2.herokuapp.com/post/${id}`,{
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${Api.token}`,
+            },
+        });
     }
 
 }
