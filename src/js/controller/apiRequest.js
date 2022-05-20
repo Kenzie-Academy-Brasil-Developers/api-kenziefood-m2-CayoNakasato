@@ -12,4 +12,5 @@ class ApiRequest {
         return response
     }
   }
-  export {ApiRequest}
+
+export {ApiRequest}

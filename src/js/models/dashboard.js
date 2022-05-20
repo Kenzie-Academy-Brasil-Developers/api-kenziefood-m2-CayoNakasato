@@ -2,7 +2,6 @@ import ApiDash from "../controller/apidashboard.js"
 
 // GET DOS ELEMENTOS DA PÁGINA
 
-const container = document.getElementById('container__products')
 const buttonNav = document.getElementById('ul__button') 
 const modalRegister = document.getElementById('modal__register')
 const fundoModal = document.getElementById('fundo__modal')
@@ -17,52 +16,21 @@ const modalCreateDenied = document.getElementById('modal__status__denied')
 const modalCreateAcept = document.getElementById('modal__status__acept')
 const categoryPan = document.getElementById('register__category_Panificadora')
 const categoryFru = document.getElementById('register__category_Panificadora')
-const avatarImg = document.querySelector(".avatar__hover")
 const infoLogoutButton = document.getElementById("header__Logout__Hover")
-const logoutBtn = document.querySelector(".header__btn__logout")
-const btnHomePage = document.querySelector("#header__button__menu")
-const buttonTrash = document.querySelectorAll('.classtrash__button__event > img')
 const buttonEdit = document.querySelectorAll('.edit__button__event > img')
 
-// LISTENERS DA PÁGINA 
-
-btnHomePage.addEventListener("click", ()=>{
-    window.location = "../../index.html"
-})
-
-avatarImg.addEventListener('click', ()=>{
-    if(infoLogoutButton.style.display = "none"){
-        infoLogoutButton.style.display = "block"
-    }
-})
-
-logoutBtn.addEventListener("click", ()=>{
-    window.location.href = "/index.html"
-    localStorage.clear()
-})
-
-buttonNav.addEventListener('click', showModalRegister)
-trashRegModal.addEventListener('click', closeModal)
-registerButton.addEventListener('click', createProduct)
-
-buttonTrash.forEach(elem => {
-    elem.addEventListener('click', ()=> {
-        ApiDash.deletePost(elem.name)
-    })
-})
-
-
-// API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
-
-class Products {
-
-    static DATA = ApiDash.getItem()
-
-    static async inputProducts () {
-        
+                // API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
+                
+    class Products {
+                
+        static DATA = ApiDash.getItem()
+                
+        static async inputProducts () {
+                    
         const data = await ApiDash.getItem()
-
+                    
         data.forEach(element => {
+            const container = document.getElementById('container__products')
             const table = document.createElement('table')
             const line = document.createElement('tr')
             const name = document.createElement('td')
@@ -73,7 +41,7 @@ class Products {
             const buttons = document.createElement('td')
             const trash = document.createElement('img')
             const edit = document.createElement('img')
-
+            
             table.classList.add('container__table__cells')
             line.classList.add('table__cells')
             name.classList.add('container__table__product')
@@ -94,14 +62,12 @@ class Products {
             description.innerText = element.descricao
             trash.src = "../assert/trash.svg"
             edit.src = "../assert/edit.svg"
-            trash.name = element.id
-            edit.name = element.id
 
             buttons.append(edit, trash)
             name.append(imgProduct, pName)
             line.append(name, category, description, buttons)
             table.append(line)
-            container.append(table)
+            container.appendChild(table)
         });
     }
 }
@@ -153,13 +119,19 @@ function category() {
     })
     return res
 }
+
 category()
 
 
+// btnHomePage.addEventListener("click", () => {
+//     window.location = "../../index.html"
+// })
 
-Products.inputProducts()
+const avatarImage = document.querySelector(".avatar__hover")
 
+// avatarImage.addEventListener("click", ()=>{
+    
+// })
 
-
-
+export{ Products } 
 
