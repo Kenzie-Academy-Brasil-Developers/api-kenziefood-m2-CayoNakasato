@@ -24,6 +24,7 @@ const filterBebidasDashboard = document.querySelector("#filter_dashboard_bebidas
 
 
 showCase.homePage()
+Products.inputProducts()
 Cart.emptyCart()
 Cart.cartMobile()
 
