@@ -26,30 +26,30 @@ const buttonEdit = document.querySelectorAll('.edit__button__event > img')
 
 // LISTENERS DA PÁGINA 
 
-btnHomePage.addEventListener("click", ()=>{
-    window.location = "../../index.html"
-})
+// btnHomePage.addEventListener("click", ()=>{
+//     window.location = "../../index.html"
+// })
 
-avatarImg.addEventListener('click', ()=>{
-    if(infoLogoutButton.style.display = "none"){
-        infoLogoutButton.style.display = "block"
-    }
-})
+// avatarImg.addEventListener('click', ()=>{
+//     if(infoLogoutButton.style.display = "none"){
+//         infoLogoutButton.style.display = "block"
+//     }
+// })
 
-logoutBtn.addEventListener("click", ()=>{
-    window.location.href = "/index.html"
-    localStorage.clear()
-})
+// logoutBtn.addEventListener("click", ()=>{
+//     window.location.href = "/index.html"
+//     localStorage.clear()
+// })
 
-buttonNav.addEventListener('click', showModalRegister)
-trashRegModal.addEventListener('click', closeModal)
-registerButton.addEventListener('click', createProduct)
+// buttonNav.addEventListener('click', showModalRegister)
+// trashRegModal.addEventListener('click', closeModal)
+// registerButton.addEventListener('click', createProduct)
 
-buttonTrash.forEach(elem => {
-    elem.addEventListener('click', ()=> {
-        ApiDash.deletePost(elem.name)
-    })
-})
+// buttonTrash.forEach(elem => {
+//     elem.addEventListener('click', ()=> {
+//         ApiDash.deletePost(elem.name)
+//     })
+// })
 
 
 // API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
