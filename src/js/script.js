@@ -91,21 +91,26 @@ btnHomePage.addEventListener("click", ()=>{
     
 avatarImg.addEventListener('click', ()=>{
     if(infoLogoutButton.style.display = "none"){
-            infoLogoutButton.style.display = "block"
-        }
-    })
+    infoLogoutButton.style.display = "block"
+    }
+})
     
-    logoutBtn.addEventListener("click", ()=>{
-            window.location.href = "/index.html"
-            localStorage.clear()
-        })
+logoutBtn.addEventListener("click", ()=>{
+    window.location.href = "/index.html"
+    localStorage.clear()
+})
         
-        buttonNav.addEventListener('click', showModalRegister)
-        trashRegModal.addEventListener('click', closeModal)
-        registerButton.addEventListener('click', createProduct)
-        
-        buttonTrash.forEach(elem => {
-                elem.addEventListener('click', ()=> {
-                        ApiDash.deletePost(elem.name)
-                    })
-                })
+buttonNav.addEventListener('click', showModalRegister)
+trashRegModal.addEventListener('click', closeModal)
+registerButton.addEventListener('click', createProduct)
+
+// FUNÇÃO QUE DELETA OS ITENS DO CARRINHO
+function deleteProduct(event){
+    console.log(event)
+    ApiDash.deleteProduct(event)
+}
+buttonTrash.forEach(elem => {
+    elem.addEventListener('click', ()=> {
+    ApiDash.deletePost(elem.name)
+    })
+})

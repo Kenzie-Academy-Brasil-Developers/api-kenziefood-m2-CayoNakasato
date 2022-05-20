@@ -21,7 +21,6 @@ class Cart {
                 </div>
             `
             document.querySelector("main").appendChild(cart);
-       
             
     }
     static async createProduct(productId){

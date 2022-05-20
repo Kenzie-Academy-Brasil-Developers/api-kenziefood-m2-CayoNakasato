@@ -1,7 +1,6 @@
 import Api from "../controller/api.js"
 import ApiDash from "../controller/apidashboard.js"
 // GET DOS ELEMENTOS DA PÁGINA
-const container = document.getElementById('container__products')
 const buttonNav = document.getElementById('ul__button')
 const modalRegister = document.getElementById('modal__register')
 const fundoModal = document.getElementById('fundo__modal')
@@ -26,28 +25,15 @@ const nameEdit = document.getElementById('modal__edit__nome')
 const descricaoEdit = document.getElementById('modal__edit__descricao')
 const valorEdit = document.getElementById('modal__edit__valor')
 const imagemEdit = document.getElementById('modal__edit__image')
-// LISTENERS DA PÁGINA
-btnHomePage.addEventListener("click", ()=>{
-    window.location = "../../index.html"
-})
-avatarImg.addEventListener('click', ()=>{
-    if(infoLogoutButton.style.display = "none"){
-        infoLogoutButton.style.display = "block"
-    }
-})
-logoutBtn.addEventListener("click", ()=>{
-    window.location.href = "/index.html"
-    localStorage.clear()
-})
-buttonNav.addEventListener('click', showModalRegister)
-trashRegModal.addEventListener('click', closeModal)
-registerButton.addEventListener('click', createProduct)
-// API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
+
 class Products {
     static DATA = ApiDash.getItem()
+
     static async inputProducts () {
         const data = await ApiDash.getItem()
-        data.forEach(element => {
+
+        await data.forEach(element => {
+            const container = document.getElementById('container__products')
             const table = document.createElement('table')
             const line = document.createElement('tr')
             const name = document.createElement('td')
@@ -86,7 +72,7 @@ class Products {
         });
     }
 }
-Products.inputProducts()
+
 // FUNÇÃO PARA CRIAÇÃO DE ELEMENTOS - MODAL REGISTRO - BOTÃO FECHAR MODAL - FUNÇÃO TOGLE DAS CATEGORIAS - BOTÃO CRIAR PRODUTO
 function showModalRegister() {
     modalRegister.style.display = 'block'
@@ -111,6 +97,7 @@ function closeModal() {
     modalRegister.style.display = 'none'
     fundoModal.style.display = 'none'
 }
+
 function category() {
     let res
     registerCategory.forEach(elem => {
@@ -127,18 +114,16 @@ function category() {
     })
     return res
 }
+
 category()
-// FUNÇÃO QUE DELETA OS ITENS DO CARRINHO
-async function deleteProduct0(event){
-    console.log(event)
-    await ApiDash.deleteProduct(event)
-}
+
+
+
 // FUNÇÃO QUE ALTERA OS ITENS
 function patchProduct (event) {
     let data = {}
     //location.reload('/dashboard.html')
 }
-buttontrash.addEventListener('click', (event) => {
-    deleteProduct0(event.target.id)
-    location.reload('/dashboard.html')
-})
+
+
+export {Products}
