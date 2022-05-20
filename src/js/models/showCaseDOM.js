@@ -37,7 +37,6 @@ class showCase {
             let cartEmpty = document.querySelector(".cart__empty")
             cartEmpty.classList.add("invisible")
             Cart.createProduct(targetProduct.id)
-            console.log(targetProduct.id)
         }
     }
 }
