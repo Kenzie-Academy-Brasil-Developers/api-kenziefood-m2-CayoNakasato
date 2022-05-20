@@ -112,4 +112,3 @@ avatarImg.addEventListener('click', ()=>{
                         ApiDash.deletePost(elem.name)
                     })
                 })
-

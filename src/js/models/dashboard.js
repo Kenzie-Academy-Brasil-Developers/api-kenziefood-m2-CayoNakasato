@@ -28,24 +28,6 @@ const descricaoEdit = document.getElementById('modal__edit__descricao')
 const valorEdit = document.getElementById('modal__edit__valor')
 const imagemEdit = document.getElementById('modal__edit__image')
 
-btnHomePage.addEventListener("click", ()=>{
-    window.location = "../../index.html"
-})
-
-avatarImg.addEventListener('click', ()=>{
-    if(infoLogoutButton.style.display = "none"){
-        infoLogoutButton.style.display = "block"
-    }
-})
-
-logoutBtn.addEventListener("click", ()=>{
-    window.location.href = "/index.html"
-    localStorage.clear()
-})
-
-buttonNav.addEventListener('click', showModalRegister)
-trashRegModal.addEventListener('click', closeModal)
-registerButton.addEventListener('click', createProduct)
 
 class Products {
 
@@ -54,7 +36,7 @@ class Products {
     static async inputProducts () {
         const data = await ApiDash.getItem()
 
-const buttonEdit = document.querySelectorAll('.edit__button__event > img')
+    const buttonEdit = document.querySelectorAll('.edit__button__event > img')
                 
     class Products {
                 
@@ -106,7 +88,7 @@ const buttonEdit = document.querySelectorAll('.edit__button__event > img')
             container.append(table)
         });
        
-        
+     
     }
 }
 Products.inputProducts()
@@ -166,5 +148,6 @@ buttontrash.addEventListener('click', (event) => {
     deleteProduct0(event.target.id)
     location.reload('/dashboard.html')
 })
-
+}
+}
 export{ Products } 
