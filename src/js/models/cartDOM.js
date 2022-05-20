@@ -38,7 +38,7 @@ class Cart {
             product.classList.add("cart__product")
             picture.classList.add("cart__product__img")
             divProductInfo.classList.add("cart__product__info")
-            divProductInfoH3.classList.add("cart__product__info h3")
+            divProductInfoH3.classList.add("cart__product__name")
             divProductInfoCategory.classList.add("cart__product__category")
             divProductInfoPrice.classList.add("cart__product__price")
             divProductButtons.classList.add("cart__product__buttons")
@@ -86,7 +86,7 @@ class Cart {
             picture.append(img)
             product.append(picture,divProductInfo,divProductButtons)
 
-            cart.append(product)
+            cart.append(product)          
         });
     }
     static async cartMobile() {
