@@ -2,7 +2,6 @@ import ApiDash from "../controller/apidashboard.js"
 
 // GET DOS ELEMENTOS DA PÁGINA
 
-const container = document.getElementById('container__products')
 const buttonNav = document.getElementById('ul__button') 
 const modalRegister = document.getElementById('modal__register')
 const fundoModal = document.getElementById('fundo__modal')
@@ -26,43 +25,44 @@ const avatarImg = document.querySelector(".avatar__hover")
 
 //LISTENERS DA PÁGINA 
 
-btnHomePage.addEventListener("click", ()=>{
-    window.location = "../../index.html"
-})
-
-avatarImg.addEventListener('click', ()=>{
-    if(infoLogoutButton.style.display = "none"){
-        infoLogoutButton.style.display = "block"
-    }
-})
-
-logoutBtn.addEventListener("click", ()=>{
-    window.location.href = "/index.html"
-    localStorage.clear()
-})
-
-buttonNav.addEventListener('click', showModalRegister)
-trashRegModal.addEventListener('click', closeModal)
-registerButton.addEventListener('click', createProduct)
-
-buttonTrash.forEach(elem => {
-    elem.addEventListener('click', ()=> {
-        ApiDash.deletePost(elem.name)
-    })
-})
-
-
-// API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
-
-class Products {
-
-    static DATA = ApiDash.getItem()
-
-    static async inputProducts () {
+// btnHomePage.addEventListener("click", ()=>{
+    //     window.location = "../../index.html"
+    // })
+    
+// avatarImg.addEventListener('click', ()=>{
+//     if(infoLogoutButton.style.display = "none"){
+    //         infoLogoutButton.style.display = "block"
+    //     }
+    // })
+    
+    // logoutBtn.addEventListener("click", ()=>{
+        //     window.location.href = "/index.html"
+        //     localStorage.clear()
+        // })
         
-        const data = await ApiDash.getItem()
+        // buttonNav.addEventListener('click', showModalRegister)
+        // trashRegModal.addEventListener('click', closeModal)
+        // registerButton.addEventListener('click', createProduct)
+        
+        // buttonTrash.forEach(elem => {
+            //     elem.addEventListener('click', ()=> {
+                //         ApiDash.deletePost(elem.name)
+                //     })
+                // })
 
+
+                // API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
+                
+    class Products {
+                
+        static DATA = ApiDash.getItem()
+                
+        static async inputProducts () {
+                    
+        const data = await ApiDash.getItem()
+                    
         data.forEach(element => {
+            const container = document.getElementById('container__products')
             const table = document.createElement('table')
             const line = document.createElement('tr')
             const name = document.createElement('td')
@@ -73,7 +73,7 @@ class Products {
             const buttons = document.createElement('td')
             const trash = document.createElement('img')
             const edit = document.createElement('img')
-
+            
             table.classList.add('container__table__cells')
             line.classList.add('table__cells')
             name.classList.add('container__table__product')
@@ -94,14 +94,12 @@ class Products {
             description.innerText = element.descricao
             trash.src = "../assert/trash.svg"
             edit.src = "../assert/edit.svg"
-            trash.name = element.id
-            edit.name = element.id
 
             buttons.append(edit, trash)
             name.append(imgProduct, pName)
             line.append(name, category, description, buttons)
             table.append(line)
-            container.append(table)
+            container.appendChild(table)
         });
     }
 }

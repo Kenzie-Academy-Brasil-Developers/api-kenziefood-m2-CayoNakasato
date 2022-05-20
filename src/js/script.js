@@ -6,7 +6,8 @@ import {Cart} from './models/cartDOM.js';
 // import {FilterDashboard} from "./models/FilterHomePage.js";
 import Login from "./models/login.js";
 import './models/searchBar.js';
-import Api from './controller/api.js';
+import { ApiRequest } from './controller/apiRequest.js';
+
 
 const btnLogar = document.querySelector(".button__login")
 const loginDiv = document.querySelector(".div__login")
@@ -33,11 +34,12 @@ Cart.cartMobile()
 class FilterHomePage {
 
     static async showAll() {
-
+        console.log('oi');
+        showCase.homePage()
     }
 
     static async filterPanificadora() {
-        const data = await Api.getItem()
+        const data = await ApiRequest.requisition()
 
         const filter = await data.filter((product) => {
             return product.categoria === "Panificadora"
@@ -46,7 +48,7 @@ class FilterHomePage {
     }
 
     static async filterFrutas() {
-        const data = await Api.getItem()
+        const data = await ApiRequest.requisition()
         
         const filter = await data.filter((product) => {
             return product.categoria === "Frutas"
@@ -55,7 +57,7 @@ class FilterHomePage {
     }
     
     static async filterBebidas() {
-        const data = await Api.getItem()
+        const data = await ApiRequest.requisition()
 
         const filter = await data.filter((product) => {
             return product.categoria === "Bebidas"
@@ -64,7 +66,7 @@ class FilterHomePage {
     }
     
     static async showAll() {
-        const data = await Api.getItem()
+        const data = await ApiRequest.requisition()
         this.showByCategoryHomePage(data)
     }
     
@@ -116,28 +118,30 @@ class FilterHomePage {
     }
 }
 
-filterTodosHomePage.addEventListener("click", () => {
-    FilterHomePage.showAll()
-})
-
 btnLogar.addEventListener("click", () => {
     Login.loginModal()
     loginDiv.classList.remove("hidden")
 })
 
-filterPanificadoraHomePage.addEventListener("click", () => {
+filterTodosHomePage.addEventListener("click", () => {
     homePageContent.innerHTML = ''
-    FilterHomePage.filterPanificadora()
+    FilterHomePage.showAll()
 })
 
-filterFrutasHomePage.addEventListener("click", () => {
+
+filterPanificadoraHomePage.addEventListener("click", async() => {
     homePageContent.innerHTML = ''
-    FilterHomePage.filterFrutas()
+    await FilterHomePage.filterPanificadora()
 })
 
-filterBebidasHomePage.addEventListener("click", () => {
+filterFrutasHomePage.addEventListener("click", async() => {
     homePageContent.innerHTML = ''
-    FilterHomePage.filterBebidas()
+    await FilterHomePage.filterFrutas()
+})
+
+filterBebidasHomePage.addEventListener("click", async() => {
+    homePageContent.innerHTML = ''
+    await FilterHomePage.filterBebidas()
 })
 
 // filterTodosDashboard.addEventListener("click", () => {
