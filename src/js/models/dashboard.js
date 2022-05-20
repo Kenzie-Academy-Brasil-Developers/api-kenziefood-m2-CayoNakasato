@@ -45,12 +45,8 @@ buttonNav.addEventListener('click', showModalRegister)
 trashRegModal.addEventListener('click', closeModal)
 registerButton.addEventListener('click', createProduct)
 
-console.log(buttonTrash)
-console.log(buttonEdit)
-
 buttonTrash.forEach(elem => {
     elem.addEventListener('click', ()=> {
-        console.log('oi')
         ApiDash.deletePost(elem.name)
     })
 })
@@ -65,8 +61,6 @@ class Products {
     static async inputProducts () {
         
         const data = await ApiDash.getItem()
-
-        console.log(data)
 
         data.forEach(element => {
             const table = document.createElement('table')
@@ -115,11 +109,9 @@ class Products {
 // FUNÇÃO PARA CRIAÇÃO DE ELEMENTOS - MODAL REGISTRO - BOTÃO FECHAR MODAL - FUNÇÃO TOGLE DAS CATEGORIAS - BOTÃO CRIAR PRODUTO
 
 function showModalRegister() {
-    console.log('tet')
     modalRegister.style.display = 'block'
     fundoModal.style.display = 'block'
 }
-
 
 async function createProduct() {
     const data = {}
