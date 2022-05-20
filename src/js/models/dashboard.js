@@ -125,5 +125,10 @@ function patchProduct (event) {
     //location.reload('/dashboard.html')
 }
 
+// FUNÇÃO QUE DELETA OS ITENS DO CARRINHO
+function deleteProduct(event){
+    console.log(event)
+    ApiDash.deleteProduct(event)
+}
 
 export {Products}

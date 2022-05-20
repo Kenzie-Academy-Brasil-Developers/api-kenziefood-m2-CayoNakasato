@@ -104,11 +104,7 @@ buttonNav.addEventListener('click', showModalRegister)
 trashRegModal.addEventListener('click', closeModal)
 registerButton.addEventListener('click', createProduct)
 
-// FUNÇÃO QUE DELETA OS ITENS DO CARRINHO
-function deleteProduct(event){
-    console.log(event)
-    ApiDash.deleteProduct(event)
-}
+
 buttonTrash.forEach(elem => {
     elem.addEventListener('click', ()=> {
     ApiDash.deletePost(elem.name)
