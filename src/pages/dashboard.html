@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="../styles/dashboard.css">
     <script defer type="module" src="../js/models/dashboard.js"></script>
     <script defer type="module" src="../js/controller/api.js"></script>
-    <title>Document</title>
+    <script defer type="module" src="../js/models/searchbarDashboard.js"></script>
+    <title>Dashboard</title>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
                 <button class="header__container__button">Dashboard</button>
                 <div id="container__itens__searchbar">
                     <img src="../assert/search.svg">
-                    <input placeholder="Pesquisar por produto">
+                    <input id="input__dashboard" placeholder="Pesquisar por produto">
                 </div>
                 <div class="box__logout">
                     <img src="../assert/user.svg" class="avatar__hover">    
@@ -35,17 +36,17 @@
     </header>
 
     <main>
-        <div class="container">
+        <section class="container">
             <nav id="list">
                 <div id="list__ul">
                     <li class="list__itens__selected ">
-                        <p class="itens__category">Todos</p>
+                        <p class="itens__category" id="filter__dashboard__todos">Todos</p>
                     </li>
                     <li class="list__itens">
-                        <p class="itens__category">Panificadora</p>
+                        <p class="itens__category" id="filter__dashboard__panificadora">Panificadora</p>
                     </li>
                     <li class="list__itens">
-                        <p class="itens__category">Frutas</p>
+                        <p class="itens__category" id="filter__dashboard_frutas">Frutas</p>
                     </li>
                     <li class="list__itens">
                         <p class="itens__category">Bebidas</p>
@@ -53,9 +54,9 @@
                 </div>
                 <button id ="ul__button" class="list__ul__button">Adicionar novo produto</button>
             </nav>
-        </div>
-        <div id="container__products">
-            <table id="container__table__header">
+        </section>
+        <div id="container__products">    
+            <table id="container__table__header" >
                 <tr id="container__table__line">
                     <td class="container__table__header" width="25%">Produto</td>
                     <td class="container__table__header" width="25%">Categorias</td>

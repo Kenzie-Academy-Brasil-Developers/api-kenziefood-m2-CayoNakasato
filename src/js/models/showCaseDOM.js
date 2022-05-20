@@ -1,7 +1,10 @@
 import { ApiRequest } from "../controller/apiRequest.js";
 import { Cart } from "./cartDOM.js";
+
 class showCase {
+    static cartConter =0
     static data = ApiRequest.requisition()
+
     static async homePage(){   
         let productArray = await this.data
         productArray.forEach(element => {
@@ -37,7 +40,9 @@ class showCase {
             let cartEmpty = document.querySelector(".cart__empty")
             cartEmpty.classList.add("invisible")
             Cart.createProduct(targetProduct.id)
-            console.log(targetProduct.id)
+            this.cartConter+=1
+            let producst = document.getElementById("total-products")
+            producst.innerText= `products: ${showCase.cartConter}`
         }
     }
 
@@ -65,4 +70,7 @@ class showCase {
         });
     }
 }
+
+
+
 export {showCase}

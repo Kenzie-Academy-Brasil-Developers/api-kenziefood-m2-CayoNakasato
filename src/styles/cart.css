@@ -278,7 +278,12 @@
         width: 25px;
         border: none;
     }
+
 }
 .invisible {
     display: none;
+}
+.conter{
+    display: flex;
+    justify-content: space-between;
 }
