@@ -10,7 +10,6 @@ import Api from './controller/api.js';
 
 const btnLogar = document.querySelector(".button__login")
 const loginDiv = document.querySelector(".div__login")
-const homePageContent = document.querySelector(".showCase")
 
 const homePageContent = document.querySelector(".showCase")
 const dashboardContent = document.querySelector('#container__products')
