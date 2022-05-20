@@ -1,6 +1,6 @@
 class ApiDash{
     static BASIC__URL = "https://api-kenzie-food.herokuapp.com"
-    static TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3YzAxNmQxLTk1M2EtNDUwZS1iZWE1LWMxYTNhM2U2YjU1MCIsImlhdCI6MTY1MzAwMDIwNywiZXhwIjoxNjUzODY0MjA3LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.7IcJz03rjDofR8E_1eD8rtvpxiSzHBpMw9cJ_PIS7E0"
+    static TOKEN = localStorage.getItem('token')
     static getItem () {
         const resp = fetch(`${this.BASIC__URL}/my/products`,{
             method: "GET",
@@ -19,13 +19,23 @@ class ApiDash{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${ApiDash.TOKEN}`,
+                "Authorization": `Bearer ${this.TOKEN}`,
             },
             body: JSON.stringify(data),
         })
         .then((res) => res.json())
-        .then((res) => res)
+        .then((res) => console.log(res))
         .catch((error) => error)    
+    }
+
+    static async deletePost(id) {
+        const response = await fetch(`https://api-blog-m2.herokuapp.com/post/${id}`,{
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${Api.token}`,
+            },
+        });
     }
 
 }

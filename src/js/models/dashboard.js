@@ -21,6 +21,8 @@ const avatarImg = document.querySelector(".avatar__hover")
 const infoLogoutButton = document.getElementById("header__Logout__Hover")
 const logoutBtn = document.querySelector(".header__btn__logout")
 const btnHomePage = document.querySelector("#header__button__menu")
+const buttonTrash = document.querySelectorAll('.classtrash__button__event > img')
+const buttonEdit = document.querySelectorAll('.edit__button__event > img')
 
 // LISTENERS DA PÁGINA 
 
@@ -42,6 +44,17 @@ logoutBtn.addEventListener("click", ()=>{
 buttonNav.addEventListener('click', showModalRegister)
 trashRegModal.addEventListener('click', closeModal)
 registerButton.addEventListener('click', createProduct)
+
+console.log(buttonTrash)
+console.log(buttonEdit)
+
+buttonTrash.forEach(elem => {
+    elem.addEventListener('click', ()=> {
+        console.log('oi')
+        ApiDash.deletePost(elem.name)
+    })
+})
+
 
 // API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
 
@@ -76,17 +89,17 @@ class Products {
             description.setAttribute('width', '40%')
             buttons.classList.add('container__table__actions')
             buttons.setAttribute('width', '10%')
-            edit.classList.add('edit__image')
+            edit.classList.add('edit__image', 'edit__button__event')
+            trash.classList.add('trash__button__event')
 
-            
             pName.innerText = element.nome
             imgProduct.src = element.imagem
             category.innerText = element.categoria
             description.innerText = element.descricao
             trash.src = "../assert/trash.svg"
             edit.src = "../assert/edit.svg"
-            trash.alt = element.id
-            edit.alt = element.id
+            trash.name = element.id
+            edit.name = element.id
 
             buttons.append(edit, trash)
             name.append(imgProduct, pName)
@@ -113,7 +126,7 @@ async function createProduct() {
     data[registerDescricao.name] = registerDescricao.value   
     data[registerPreco.name] = registerPreco.value
     data[registerImage.name] = registerImage.value
-    data.categoria = category();
+    data.categoria = 'Panificadora';
 
     const result = await ApiDash.createProduct(data)
     if(result.message != 'Token is missing'){
@@ -121,9 +134,9 @@ async function createProduct() {
     } else {
         modalCreateAcept.style.display = 'flex'
     }
-    //  setTimeout(() => {
-    //      location.reload('/dashboard.html')
-    //  }, 3000);
+    setTimeout(() => {
+        location.reload('/dashboard.html')
+    }, 3000);
 }
 
 function closeModal() {
