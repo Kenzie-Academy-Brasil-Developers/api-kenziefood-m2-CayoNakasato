@@ -1,11 +1,8 @@
 import {showCase} from './models/showCaseDOM.js';
 import {Products} from './models/dashboard.js'
 import {Cart} from './models/cartDOM.js';
-
 import {FilterHomePage, FilterDashboard } from "./models/filters.js";
-// import {FilterDashboard} from "./models/FilterHomePage.js";
 import Login from "./models/login.js";
-import './models/searchBar.js';
 
 
 const btnLogar = document.querySelector(".button__login")
@@ -94,21 +91,22 @@ btnHomePage.addEventListener("click", ()=>{
     
 avatarImg.addEventListener('click', ()=>{
     if(infoLogoutButton.style.display = "none"){
-            infoLogoutButton.style.display = "block"
-        }
-    })
+    infoLogoutButton.style.display = "block"
+    }
+})
     
-    logoutBtn.addEventListener("click", ()=>{
-            window.location.href = "/index.html"
-            localStorage.clear()
-        })
+logoutBtn.addEventListener("click", ()=>{
+    window.location.href = "/index.html"
+    localStorage.clear()
+})
         
-        buttonNav.addEventListener('click', showModalRegister)
-        trashRegModal.addEventListener('click', closeModal)
-        registerButton.addEventListener('click', createProduct)
-        
-        buttonTrash.forEach(elem => {
-                elem.addEventListener('click', ()=> {
-                        ApiDash.deletePost(elem.name)
-                    })
-                })
+buttonNav.addEventListener('click', showModalRegister)
+trashRegModal.addEventListener('click', closeModal)
+registerButton.addEventListener('click', createProduct)
+
+
+buttonTrash.forEach(elem => {
+    elem.addEventListener('click', ()=> {
+    ApiDash.deletePost(elem.name)
+    })
+})
