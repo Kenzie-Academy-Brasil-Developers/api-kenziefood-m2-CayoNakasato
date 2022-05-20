@@ -1,3 +1,4 @@
+import Api from "../controller/api.js"
 import ApiDash from "../controller/apidashboard.js"
 
 // GET DOS ELEMENTOS DA PÁGINA
@@ -21,8 +22,12 @@ const avatarImg = document.querySelector(".avatar__hover")
 const infoLogoutButton = document.getElementById("header__Logout__Hover")
 const logoutBtn = document.querySelector(".header__btn__logout")
 const btnHomePage = document.querySelector("#header__button__menu")
-const buttonTrash = document.querySelectorAll('.classtrash__button__event > img')
-const buttonEdit = document.querySelectorAll('.edit__button__event > img')
+const buttontrash = document.getElementById('container__products')
+const buttonEdit = document.querySelectorAll('#trash')
+const nameEdit = document.getElementById('modal__edit__nome')
+const descricaoEdit = document.getElementById('modal__edit__descricao')
+const valorEdit = document.getElementById('modal__edit__valor')
+const imagemEdit = document.getElementById('modal__edit__image')
 
 // LISTENERS DA PÁGINA 
 
@@ -45,15 +50,9 @@ buttonNav.addEventListener('click', showModalRegister)
 trashRegModal.addEventListener('click', closeModal)
 registerButton.addEventListener('click', createProduct)
 
-console.log(buttonTrash)
-console.log(buttonEdit)
 
-buttonTrash.forEach(elem => {
-    elem.addEventListener('click', ()=> {
-        console.log('oi')
-        ApiDash.deletePost(elem.name)
-    })
-})
+
+
 
 
 // API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
@@ -63,11 +62,7 @@ class Products {
     static DATA = ApiDash.getItem()
 
     static async inputProducts () {
-        
         const data = await ApiDash.getItem()
-
-        console.log(data)
-
         data.forEach(element => {
             const table = document.createElement('table')
             const line = document.createElement('tr')
@@ -100,22 +95,27 @@ class Products {
             description.innerText = element.descricao
             trash.src = "../assert/trash.svg"
             edit.src = "../assert/edit.svg"
-            trash.name = element.id
-            edit.name = element.id
+            trash.id = element.id
+
 
             buttons.append(edit, trash)
             name.append(imgProduct, pName)
             line.append(name, category, description, buttons)
             table.append(line)
             container.append(table)
+
+
         });
+       
+        
     }
 }
+Products.inputProducts()
 
 // FUNÇÃO PARA CRIAÇÃO DE ELEMENTOS - MODAL REGISTRO - BOTÃO FECHAR MODAL - FUNÇÃO TOGLE DAS CATEGORIAS - BOTÃO CRIAR PRODUTO
 
 function showModalRegister() {
-    console.log('tet')
+ 
     modalRegister.style.display = 'block'
     fundoModal.style.display = 'block'
 }
@@ -130,21 +130,22 @@ async function createProduct() {
     data[registerImage.name] = registerImage.value
     data.categoria = 'Panificadora';
 
-    const result = await ApiDash.createProduct(data)
-    if(result.message != 'Token is missing'){
-        modalCreateDenied.style.display = 'flex'
-    } else {
+    const result = ApiDash.createProduct(data)
+
+    if(result != 'Token is missing'){
         modalCreateAcept.style.display = 'flex'
+    } else {
+        modalCreateDenied.style.display = 'flex'
     }
-    setTimeout(() => {
-        location.reload('/dashboard.html')
-    }, 3000);
+    
+    //location.reload('/dashboard.html')
 }
 
 function closeModal() {
     modalRegister.style.display = 'none'
     fundoModal.style.display = 'none'
 }
+
 function category() {
     let res
     registerCategory.forEach(elem => {
@@ -164,10 +165,29 @@ function category() {
 category()
 
 
+// FUNÇÃO QUE DELETA OS ITENS DO CARRINHO
 
-Products.inputProducts()
+async function deleteProduct0(event){
+    console.log(event)
+    await ApiDash.deleteProduct(event)
+    
+}
+
+// FUNÇÃO QUE ALTERA OS ITENS
+
+function patchProduct (event) {
+    let data = {}
+    
+    //location.reload('/dashboard.html')
+}
 
 
 
 
+buttontrash.addEventListener('click', (event) => {
+    deleteProduct0(event.target.id)
+    location.reload('/dashboard.html')
+})
+        
+       
 

@@ -25,18 +25,32 @@ class ApiDash{
             body: JSON.stringify(data),
         })
         .then((res) => res.json())
-        .then((res) => console.log(res))
+        .then((res) => res)
         .catch((error) => error)    
     }
 
-    static async deletePost(id) {
-        const response = await fetch(`https://api-blog-m2.herokuapp.com/post/${id}`,{
+    static deleteProduct(id) {
+        const response = fetch(`${this.BASIC__URL}/my/products/${id}`,{
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${Api.token}`,
+                "Authorization": `Bearer ${this.TOKEN}`,
             },
         });
+    }
+
+    static async patchProduct(id, content) {
+        const response = await fetch(`https://api-blog-m2.herokuapp.com/post/${id}`,
+        {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${Api.token}`,
+            },
+            body: JSON.stringify(content),
+        })
+        .then((res) => res.json());    
+        return response
     }
 
 }
