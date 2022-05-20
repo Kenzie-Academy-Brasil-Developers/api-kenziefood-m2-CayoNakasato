@@ -1,23 +1,25 @@
-import { showCase } from "./showCaseDOM";
+import { showCase } from "./showCaseDOM.js";
 import { ApiRequest } from "../controller/apiRequest.js";
 
-class searchBar {
-    static createPost = showCase.homePage()
-    static data = ApiRequest.requisition()
-    static async searching(){
-        const inputValue = document.getElementById('serch-input')
-        console.log(inputValue);
+let data = []
 
-        inputValue.forEach(element => {
-            const newData = []
-            if(data[i].nome.indexOf(inputValue.value) !== -1){
-                newData.push(data[i])
-            } else if( data[i].categoria.indexOf(inputValue.value) !== -1){
-                newData.push(data[i])
-            } else {
-                return 'Error'
-            }    
-        })
-        this.createPost(newData);
+ApiRequest.requisition().then((d) => data = d);
+
+const inputValue = document.getElementById("serch-input")
+inputValue.addEventListener("keydown",(event) => {
+    const keyName = event.key;
+    if(keyName === 'Enter'){
+        findPost()
     }
+})
+
+function findPost() {
+    const inputValue = document.getElementById("serch-input")
+    const newData = [];
+    for (let i = 0; i < data.length; i++){
+        if(data[i].nome.toLowerCase().indexOf(inputValue.value.toLowerCase()) !== -1 || data[i].categoria.toLowerCase().indexOf(inputValue.value.toLowerCase()) !== -1){
+            newData.push(data[i]);
+        }
+    }
+    showCase.homePageFiltered(newData);
 }

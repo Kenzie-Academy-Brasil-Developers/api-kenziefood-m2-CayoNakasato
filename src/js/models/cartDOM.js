@@ -15,6 +15,8 @@ class Cart {
                 </div>
             `
             document.querySelector("main").appendChild(cart);
+       
+            
     }
     static async createProduct(productId){
         const stock = await this.data
@@ -65,7 +67,7 @@ class Cart {
 
             divProductButtonsDeleteBtn.addEventListener("click",(event)=>{
                 event.preventDefault()
-                
+                this.deleteItem(event)
             })
             divProductButtonsAddBtn.addEventListener("click",(event)=>{
                 event.preventDefault()
@@ -86,8 +88,9 @@ class Cart {
             picture.append(img)
             product.append(picture,divProductInfo,divProductButtons)
 
-            cart.append(product)          
+            cart.append(product)     
         });
+
     }
     static async cartMobile() {
         const body = document.querySelector("body")
@@ -130,16 +133,25 @@ class Cart {
         modaltitleLogoh2.textContent = "Carrinho"
         buttonModal.textContent = "Carrinho"
     }
-    static async identifyProduct(event){
+    static async deleteItem(event){
         let target = event.target
         if(target.classList.contains("cart__product__buttons__deleteBtn")){
             let targetProduct = target.closest(".cart__product")
-            //modal to confirm detelete action
-        }else  if(target.classList.contains("cart__product__buttons__addBtn")){
-            //contIndividualItem +=1
-        }else  if(target.classList.contains("cart__product__buttons__removeBtn")){
-            //contIndividualItem -=1
-            //condition => if contIndividualIte == 0 delete  it
+            targetProduct.remove();
+        }
+    }
+    static async addItem(event){
+        let target = event.target
+        if(target.classList.contains("cart__product__buttons__addBtn")){
+            let targetProduct = target.closest(".cart__product")
+            targetProduct.remove();
+        }
+    }
+    static async removeItem(event){
+        let target = event.target
+        if(target.classList.contains("cart__product__buttons__removeBtn")){
+            let targetProduct = target.closest(".cart__product")
+            targetProduct.remove();
         }
     }
 }
