@@ -1,11 +1,8 @@
 import {showCase} from './models/showCaseDOM.js';
 import {Products} from './models/dashboard.js'
 import {Cart} from './models/cartDOM.js';
-
 import {FilterHomePage, FilterDashboard } from "./models/filters.js";
-// import {FilterDashboard} from "./models/FilterHomePage.js";
 import Login from "./models/login.js";
-import './models/searchBar.js';
 
 
 const btnLogar = document.querySelector(".button__login")
