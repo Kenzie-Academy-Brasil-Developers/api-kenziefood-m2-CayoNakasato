@@ -2,11 +2,10 @@ import {showCase} from './models/showCaseDOM.js';
 import {Products} from './models/dashboard.js'
 import {Cart} from './models/cartDOM.js';
 
-// import {FilterHomePage } from "./models/filters.js";
+import {FilterHomePage, FilterDashboard } from "./models/filters.js";
 // import {FilterDashboard} from "./models/FilterHomePage.js";
 import Login from "./models/login.js";
 import './models/searchBar.js';
-import { ApiRequest } from './controller/apiRequest.js';
 
 
 const btnLogar = document.querySelector(".button__login")
@@ -25,98 +24,11 @@ const filterPanificadoraDashboard = document.querySelector("#filter__dashboard__
 const filterFrutasDashboard = document.querySelector("#filter_dashboard_frutas")
 const filterBebidasDashboard = document.querySelector("#filter_dashboard_bebidas")
 
-
 showCase.homePage()
 Products.inputProducts()
 Cart.emptyCart()
 Cart.cartMobile()
 
-class FilterHomePage {
-
-    static async showAll() {
-        console.log('oi');
-        showCase.homePage()
-    }
-
-    static async filterPanificadora() {
-        const data = await ApiRequest.requisition()
-
-        const filter = await data.filter((product) => {
-            return product.categoria === "Panificadora"
-        })
-        this.showByCategoryHomePage(filter)
-    }
-
-    static async filterFrutas() {
-        const data = await ApiRequest.requisition()
-        
-        const filter = await data.filter((product) => {
-            return product.categoria === "Frutas"
-        })
-        this.showByCategoryHomePage(filter)
-    }
-    
-    static async filterBebidas() {
-        const data = await ApiRequest.requisition()
-
-        const filter = await data.filter((product) => {
-            return product.categoria === "Bebidas"
-        })
-        this.showByCategoryHomePage(filter)
-    }
-    
-    static async showAll() {
-        const data = await ApiRequest.requisition()
-        this.showByCategoryHomePage(data)
-    }
-    
-    static showByCategoryHomePage(category) {
-        
-        category.forEach(element => {
-            const productCard = document.createElement("article")
-            productCard.classList="product"
-            productCard.id= element.id
-            productCard.innerHTML=`
-            <picture class="img__products">
-            <img src="${element.imagem} " alt="${element.nome}">
-            </picture>
-            <h3 class="name">${element.nome}</h3>
-            <p class="description">${element.descricao}</p>
-            <small class="category">${element.categoria}</small>
-            <aside class="price">
-            <p>R$ ${element.preco}</p>
-            <div class="cart__div">
-            <button class="addCart"><img class="addCart__img" src='./src/assert/addCartIcon.png' alt = 'Adicionar ao Carrinho de compras'></button>
-            </div>
-            </aside>
-            `
-            homePageContent.appendChild(productCard)
-        })
-    }
-    
-    static async showByCategoryDashboard(category) {
-        category.forEach(element => {
-            const productCard = document.createElement("article")
-            productCard.classList="product"
-            productCard.id= element.id
-            productCard.innerHTML=`
-            <picture class="img__products">
-            <img src="${element.imagem} " alt="${element.nome}">
-            </picture>
-            <h3 class="name">${element.nome}</h3>
-            <p class="description">${element.descricao}</p>
-            <small class="category">${element.categoria}</small>
-            <aside class="price">
-            <p>R$ ${element.preco}</p>
-            <div class="cart__div">
-            <button class="addCart"><img class="addCart__img" src='./src/assert/addCartIcon.png' alt = 'Adicionar ao Carrinho de compras'></button>
-            </div>
-            </aside>
-            `
-            homePageContent.appendChild(productCard)
-        })
-    }
-}
 
 btnLogar.addEventListener("click", () => {
     Login.loginModal()
@@ -144,27 +56,57 @@ filterBebidasHomePage.addEventListener("click", async() => {
     await FilterHomePage.filterBebidas()
 })
 
-// filterTodosDashboard.addEventListener("click", () => {
-//     console.log('oi');
-//     Products.inputProducts()
-// })
+filterTodosDashboard.addEventListener("click", async() => {
+    homePageContent.innerHTML = ''
+    await FilterDashboard.showAll()
+})
 
-// filterPanificadoraDashboard.addEventListener("click", () => {
-//     dashboardContent.innerHTML = ''
-//     FilterDashboard.filterPanificadora()
-// })
+filterPanificadoraDashboard.addEventListener("click", async() => {
+    dashboardContent.innerHTML = ''
+    await FilterDashboard.filterPanificadora()
+})
 
-// filterFrutasDashboard.addEventListener("click", () => {
-//     dashboardContent.innerHTML = ''
-//     FilterDashboard.filterFrutas()
-// })
+filterFrutasDashboard.addEventListener("click", async() => {
+    dashboardContent.innerHTML = ''
+    await FilterDashboard.filterFrutas()
+})
 
-// filterBebidasDashboard.addEventListener("click", () => {
-//     dashboardContent.innerHTML = ''
-//     FilterDashboard.filterBebidas()
-// })
-
-
+filterBebidasDashboard.addEventListener("click", async() => {
+    dashboardContent.innerHTML = ''
+    await FilterDashboard.filterBebidas()
+})
 
 
-export default FilterHomePage
+const logoutBtn = document.querySelector(".header__btn__logout")
+const buttonTrash = document.querySelectorAll('.classtrash__button__event > img')
+const btnHomePage = document.querySelector("#header__button__menu")
+const avatarImg = document.querySelector(".avatar__hover")
+
+
+//LISTENERS DA PÁGINA DASHBOARD
+
+btnHomePage.addEventListener("click", ()=>{
+        window.location = "../../index.html"
+    })
+    
+avatarImg.addEventListener('click', ()=>{
+    if(infoLogoutButton.style.display = "none"){
+            infoLogoutButton.style.display = "block"
+        }
+    })
+    
+    logoutBtn.addEventListener("click", ()=>{
+            window.location.href = "/index.html"
+            localStorage.clear()
+        })
+        
+        buttonNav.addEventListener('click', showModalRegister)
+        trashRegModal.addEventListener('click', closeModal)
+        registerButton.addEventListener('click', createProduct)
+        
+        buttonTrash.forEach(elem => {
+                elem.addEventListener('click', ()=> {
+                        ApiDash.deletePost(elem.name)
+                    })
+                })
+

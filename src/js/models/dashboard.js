@@ -17,39 +17,7 @@ const modalCreateAcept = document.getElementById('modal__status__acept')
 const categoryPan = document.getElementById('register__category_Panificadora')
 const categoryFru = document.getElementById('register__category_Panificadora')
 const infoLogoutButton = document.getElementById("header__Logout__Hover")
-const logoutBtn = document.querySelector(".header__btn__logout")
-const buttonTrash = document.querySelectorAll('.classtrash__button__event > img')
 const buttonEdit = document.querySelectorAll('.edit__button__event > img')
-const btnHomePage = document.querySelector("#header__button__menu")
-const avatarImg = document.querySelector(".avatar__hover")
-
-//LISTENERS DA PÁGINA 
-
-// btnHomePage.addEventListener("click", ()=>{
-    //     window.location = "../../index.html"
-    // })
-    
-// avatarImg.addEventListener('click', ()=>{
-//     if(infoLogoutButton.style.display = "none"){
-    //         infoLogoutButton.style.display = "block"
-    //     }
-    // })
-    
-    // logoutBtn.addEventListener("click", ()=>{
-        //     window.location.href = "/index.html"
-        //     localStorage.clear()
-        // })
-        
-        // buttonNav.addEventListener('click', showModalRegister)
-        // trashRegModal.addEventListener('click', closeModal)
-        // registerButton.addEventListener('click', createProduct)
-        
-        // buttonTrash.forEach(elem => {
-            //     elem.addEventListener('click', ()=> {
-                //         ApiDash.deletePost(elem.name)
-                //     })
-                // })
-
 
                 // API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
                 
@@ -151,13 +119,8 @@ function category() {
     })
     return res
 }
+
 category()
-
-
-
-Products.inputProducts()
-
-
 
 
 // btnHomePage.addEventListener("click", () => {

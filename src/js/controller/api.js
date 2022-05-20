@@ -41,7 +41,7 @@ class Api{
         if(!responseData.error){
             
             localStorage.setItem("token", responseData)
-            window.location = "/src/pages/dashboard.html"
+            window.location.href = "/src/pages/dashboard.html"
         }
         else if(responseData.error){
             const divLogin = document.querySelector(".div__login")
