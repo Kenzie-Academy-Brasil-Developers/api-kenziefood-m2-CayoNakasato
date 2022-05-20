@@ -25,7 +25,7 @@ class ApiDash{
             body: JSON.stringify(data),
         })
         .then((res) => res.json())
-        .then((res) => console.log(res))
+        .then((res) => res)
         .catch((error) => error)    
     }
 
