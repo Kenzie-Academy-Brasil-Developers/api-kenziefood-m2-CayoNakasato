@@ -14,6 +14,7 @@ const loginDiv = document.querySelector(".div__login")
 const homePageContent = document.querySelector(".showCase")
 const dashboardContent = document.querySelector('#container__products')
 
+
 const filterTodosHomePage = document.querySelector("#filter__homePage__todos")
 const filterPanificadoraHomePage = document.querySelector("#filter__homePage__panificadora")
 const filterFrutasHomePage = document.querySelector("#filter_homePage_frutas")
@@ -24,16 +25,18 @@ const filterPanificadoraDashboard = document.querySelector("#filter__dashboard__
 const filterFrutasDashboard = document.querySelector("#filter_dashboard_frutas")
 const filterBebidasDashboard = document.querySelector("#filter_dashboard_bebidas")
 
+
+btnLogar.addEventListener("click", ()=>{
+    Login.loginModal()
+    loginDiv.classList.remove("hidden")
+})
+
+
 showCase.homePage()
 Products.inputProducts()
 Cart.emptyCart()
 Cart.cartMobile()
 
-
-btnLogar.addEventListener("click", () => {
-    Login.loginModal()
-    loginDiv.classList.remove("hidden")
-})
 
 filterTodosHomePage.addEventListener("click", () => {
     homePageContent.innerHTML = ''
