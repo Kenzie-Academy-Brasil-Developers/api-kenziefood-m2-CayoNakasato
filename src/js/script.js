@@ -12,7 +12,7 @@ btnLogar.addEventListener("click", ()=>{
     Login.loginModal()
     loginDiv.classList.remove("hidden")
 })
-
+let testeCont = 0
 showCase.homePage()
 Cart.emptyCart()
 Cart.cartMobile()

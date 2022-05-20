@@ -1,4 +1,5 @@
 import { ApiRequest } from "../controller/apiRequest.js";
+import { showCase } from "./showCaseDOM.js";
 class Cart {
     static data = ApiRequest.requisition()
     static async emptyCart(){   
@@ -12,6 +13,11 @@ class Cart {
                 <div class="cart__empty">
                     <img class="cart__empty__img" src="./src/assert/bag-svgrepo-com.svg" alt="sacola vazia">
                     <p class="cart__empty__text">Por enquanto não temos produtos no carrinho</p>
+                </div>
+
+                <div class="conter">
+                    <p id="total-products">produtos:</p>
+                    <p id="total-price">valor:</p>
                 </div>
             `
             document.querySelector("main").appendChild(cart);
@@ -71,11 +77,15 @@ class Cart {
             })
             divProductButtonsAddBtn.addEventListener("click",(event)=>{
                 event.preventDefault()
-                //add product function
+                showCase.cartConter+=1
+                let producst = document.getElementById("total-products")
+                producst.innerText= `products: ${showCase.cartConter}`
             })
             divProductButtonsRemoveBtn.addEventListener("click",(event)=>{
                 event.preventDefault()
-                //remove product function
+                showCase.cartConter-=1
+                let producst = document.getElementById("total-products")
+                producst.innerText= `products: ${showCase.cartConter}`
             })
 
             const cart = document.querySelector(".cart")
@@ -138,6 +148,9 @@ class Cart {
         if(target.classList.contains("cart__product__buttons__deleteBtn")){
             let targetProduct = target.closest(".cart__product")
             targetProduct.remove();
+            showCase.cartConter  = 0
+            let producst = document.getElementById("total-products")
+            producst.innerText= `products: ${showCase.cartConter}`
         }
     }
     static async addItem(event){
