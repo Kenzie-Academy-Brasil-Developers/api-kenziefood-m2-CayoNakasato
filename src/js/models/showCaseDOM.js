@@ -1,6 +1,7 @@
 import { ApiRequest } from "../controller/apiRequest.js";
 import { Cart } from "./cartDOM.js";
 class showCase {
+    static cartConter =0
     static data = ApiRequest.requisition()
     static async homePage(){   
         let productArray = await this.data
@@ -37,6 +38,9 @@ class showCase {
             let cartEmpty = document.querySelector(".cart__empty")
             cartEmpty.classList.add("invisible")
             Cart.createProduct(targetProduct.id)
+            this.cartConter+=1
+            let producst = document.getElementById("total-products")
+            producst.innerText= `products: ${showCase.cartConter}`
         }
     }
 
