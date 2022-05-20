@@ -17,39 +17,39 @@ const modalCreateDenied = document.getElementById('modal__status__denied')
 const modalCreateAcept = document.getElementById('modal__status__acept')
 const categoryPan = document.getElementById('register__category_Panificadora')
 const categoryFru = document.getElementById('register__category_Panificadora')
-const avatarImg = document.querySelector(".avatar__hover")
 const infoLogoutButton = document.getElementById("header__Logout__Hover")
 const logoutBtn = document.querySelector(".header__btn__logout")
-const btnHomePage = document.querySelector("#header__button__menu")
 const buttonTrash = document.querySelectorAll('.classtrash__button__event > img')
 const buttonEdit = document.querySelectorAll('.edit__button__event > img')
+const btnHomePage = document.querySelector("#header__button__menu")
+const avatarImg = document.querySelector(".avatar__hover")
 
-// LISTENERS DA PÁGINA 
+//LISTENERS DA PÁGINA 
 
-// btnHomePage.addEventListener("click", ()=>{
-//     window.location = "../../index.html"
-// })
+btnHomePage.addEventListener("click", ()=>{
+    window.location = "../../index.html"
+})
 
-// avatarImg.addEventListener('click', ()=>{
-//     if(infoLogoutButton.style.display = "none"){
-//         infoLogoutButton.style.display = "block"
-//     }
-// })
+avatarImg.addEventListener('click', ()=>{
+    if(infoLogoutButton.style.display = "none"){
+        infoLogoutButton.style.display = "block"
+    }
+})
 
-// logoutBtn.addEventListener("click", ()=>{
-//     window.location.href = "/index.html"
-//     localStorage.clear()
-// })
+logoutBtn.addEventListener("click", ()=>{
+    window.location.href = "/index.html"
+    localStorage.clear()
+})
 
-// buttonNav.addEventListener('click', showModalRegister)
-// trashRegModal.addEventListener('click', closeModal)
-// registerButton.addEventListener('click', createProduct)
+buttonNav.addEventListener('click', showModalRegister)
+trashRegModal.addEventListener('click', closeModal)
+registerButton.addEventListener('click', createProduct)
 
-// buttonTrash.forEach(elem => {
-//     elem.addEventListener('click', ()=> {
-//         ApiDash.deletePost(elem.name)
-//     })
-// })
+buttonTrash.forEach(elem => {
+    elem.addEventListener('click', ()=> {
+        ApiDash.deletePost(elem.name)
+    })
+})
 
 
 // API PARA APLICAÇÃO DOS ELEMENTOS NA PÁGINA
