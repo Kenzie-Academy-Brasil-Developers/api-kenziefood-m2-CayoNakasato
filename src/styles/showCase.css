@@ -110,7 +110,7 @@
         justify-content: flex-start;
         margin-top: 10px;
         width: 80%;
-        max-height: 400px;
+        max-height: 660px;
         overflow-y: auto;
         overflow-x: auto;
     }
@@ -128,7 +128,6 @@
         border-radius: 20px;
     }
 
-
     .product{
         width: 250px;
         height: 380px;
@@ -140,6 +139,7 @@
         margin-right: 7px;
         margin-bottom: 10px;
     }
+
     .img__products{
         height: 200px;
         width: 250px;
